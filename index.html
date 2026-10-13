@@ -1,0 +1,1572 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f3e9">
+<title>문명: 우리가 만드는 세계 -하늘과 삶 편-</title>
+<style>
+:root{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:#263c35;background:#f5f3e9;--accent:#aa5a2e}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;min-height:48px;border:1px solid #d5dace;border-radius:12px;background:#fffef9;padding:12px 16px;color:inherit;font-weight:700}button:hover{border-color:var(--accent);background:#fff6e7}button:disabled{cursor:default;opacity:.55}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #377baf;outline-offset:3px}button.primary{background:#294d40;color:white;border-color:#294d40}button[aria-pressed="true"]{border:2px solid var(--accent);background:#fff0d9;padding:11px 15px}[hidden]{display:none!important}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(24px,3vw,36px);letter-spacing:-1.4px;margin-bottom:10px}h2{font-size:23px;margin-bottom:12px}h3{font-size:19px}p{line-height:1.65}.muted{color:#64766c}.small{font-size:13px}.shell{max-width:1440px;margin:auto;padding:24px 28px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.brand{display:flex;gap:12px;align-items:center;font-weight:800;font-size:20px}.logo{display:grid;grid-template-columns:repeat(2,12px);gap:3px;transform:rotate(-9deg)}.logo i{width:12px;height:12px;background:#77a377;border-radius:2px}.logo i:nth-child(2){background:#d7b774}.logo i:nth-child(3){background:#ad7355}.badge{display:inline-block;background:#e6eddf;border-radius:30px;padding:7px 12px;font-size:13px}.welcome{padding:40px 0 24px}.eyebrow{color:#687e65;font-size:13px;letter-spacing:2px;font-weight:bold;margin-bottom:12px}.climate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}.climate-card{position:relative;min-height:235px;text-align:left;padding:26px;border-radius:20px;overflow:hidden;background:#faf9f3}.climate-card.active{background:#f5dfb7;border:2px solid #c89c5d}.climate-card .icon{font-size:40px;display:block;margin-bottom:18px}.climate-card strong{display:block;font-size:24px;margin-bottom:8px}.climate-card .pixel{position:absolute;right:22px;bottom:24px;width:64px;height:38px;background:#d7a46c;box-shadow:-22px 14px #b97e51,15px -16px #eac58c;opacity:.55}.class-note{display:flex;flex-wrap:wrap;gap:10px;color:#607466;font-size:14px}.class-note span{background:#e9ecdf;padding:9px 14px;border-radius:8px}.workspace{display:grid;grid-template-columns:224px minmax(360px,1fr) 300px;gap:18px;align-items:start}.panel{background:#fffef9;border:1px solid #dfe2d5;border-radius:18px;padding:20px}.missions{position:sticky;top:20px}.mission{width:100%;display:flex;align-items:center;gap:10px;text-align:left;background:transparent;border:0;margin:4px 0;font-size:15px}.mission .step{display:grid;place-items:center;border-radius:50%;width:28px;height:28px;background:#ececdf;flex-shrink:0;font-size:13px}.mission.done .step{background:#d6ead1;color:#386443}progress{width:100%;height:8px;accent-color:#52794b;margin:10px 0 12px}.world-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.world-head h2{margin:0}.world-box{border-radius:16px;overflow:auto;border:1px solid #ddc7a5;background:#fbe7bd}canvas{display:block;width:100%;min-width:640px;height:auto;touch-action:none;outline-offset:-4px}.world-caption{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#627468;margin-top:10px}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:18px 0}.tabs button{padding:10px 5px;font-size:15px}.tools{display:flex;gap:8px;margin:14px 0}.tools button{flex:1}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.choice{text-align:left;font-size:14px;padding:12px 10px}.swatch{display:inline-block;width:22px;height:22px;border-radius:3px;vertical-align:middle;margin-right:7px;box-shadow:inset 0 -5px #0002}.feedback{background:#f1f3e5;border-left:4px solid #9aa977;border-radius:8px;padding:12px;font-size:15px;line-height:1.7;margin:14px 0}.hint{background:#fff1d5;border-color:#d5a557}.fact{padding:18px;background:#fff3da;border-radius:12px;text-align:center;margin-bottom:14px;font-size:20px;min-height:115px;display:grid;place-items:center}.full{width:100%}.item-row{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid #eceee3}.recipe{width:100%;text-align:left;margin-top:10px}.recipe span{display:block;color:#6c7b6d;font-size:12px;margin-top:6px;font-weight:normal}.avatar-preview{display:flex;justify-content:center;background:#f0eee2;border-radius:10px;margin:12px 0}#avatar{width:150px;min-width:0}.answer{width:100%;text-align:left;margin-top:8px;font-size:14px;font-weight:normal;display:flex;gap:8px;line-height:1.6}.question-nav{display:flex;gap:8px;margin-top:12px}.question-nav button{flex:1}.save-box{background:#e8efdf;margin-top:18px}#saveStatus{font-size:13px;margin-top:8px;margin-bottom:0}#notice{margin-bottom:14px;padding:12px 16px;border-radius:10px;background:#fff1cd;font-size:14px}.teacher{margin-top:28px;font-size:14px;color:#617161}summary{cursor:pointer;padding:14px 0;font-weight:bold}.teacher-content{background:#fffef9;padding:18px;border-radius:12px}dialog{border:1px solid #d7dcca;border-radius:20px;width:min(92vw,500px);color:#263c35;padding:28px}dialog::backdrop{background:#253c3590}.guide-step{display:flex;gap:16px;align-items:center;padding:13px 0;border-bottom:1px solid #eee}.guide-step span{font-size:30px}#previewImage{width:100%;border-radius:12px}.error-screen{background:#fff1cd;padding:20px;border-radius:12px}.pan-tools{display:flex;justify-content:space-between;margin-top:8px;gap:8px}.pan-tools button{font-size:13px;min-height:44px;padding:8px 12px}
+@media(max-width:1200px){.workspace{grid-template-columns:180px minmax(340px,1fr) 270px;gap:12px}.panel{padding:15px}.shell{padding:20px 16px}}
+@media(max-width:980px){.workspace{grid-template-columns:minmax(360px,1fr) 300px}.missions{position:static;grid-column:1/-1}.mission-list{display:flex;flex-wrap:wrap}.mission{width:auto;flex:1 1 130px}.missions h3,.missions progress{display:none}.missions .small{margin:4px 0}}
+@media(max-width:700px){.workspace{display:flex;flex-direction:column}.workspace>*{width:100%}.climate-grid{grid-template-columns:repeat(2,1fr);gap:10px}.climate-card{min-height:185px;padding:18px}.climate-card strong{font-size:21px}.brand{font-size:16px}.welcome{padding-top:20px}.badge{font-size:11px}.world-head h2{font-size:20px}.shell{padding:16px 12px}}
+.mission{padding:12px 4px}p,.mission,.answer{word-break:keep-all;overflow-wrap:anywhere}
+#world{min-width:0;aspect-ratio:1;cursor:crosshair}.world-box{overflow:hidden}.camera-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.camera-tools button{flex:1;min-width:78px;padding:9px 8px;font-size:13px}.camera-tools .wide{flex-basis:100%}.layer-control{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px;padding:8px;border-radius:10px;background:#f1efdf}.layer-control button{padding:6px 14px}.layer-control span{font-size:13px}
+.brand-copy{min-width:0}.brand-title{display:block}.brand-tagline{margin:8px 0 0;font-size:14px;font-weight:400;line-height:1.6;color:#64766c}.logo{flex-shrink:0}header{flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><div class="brand"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span><div class="brand-copy"><span class="brand-title">문명: 우리가 만드는 세계 -하늘과 삶 편-</span><p class="brand-tagline">기후를 읽고, 다양한 삶의 지혜를 발견하라.</p></div></div><span class="badge">6학년 사회 · 나만의 마을</span></header>
+<div id="notice" hidden role="status" aria-live="polite"></div>
+<section id="home"><div class="welcome"><p class="eyebrow">날씨가 다르면, 생활도 달라져요</p><h1>내가 만든 마을에는<br>어떤 기후의 이야기가 담길까요?</h1><p class="muted">집을 짓고, 옷과 음식을 골라 기후와 생활을 연결해보세요.</p></div><div id="climateCards" class="climate-grid"></div><div class="class-note"><span>▦ 16 × 16 블록 월드</span><span>☝ 터치로 만들기</span><span>▣ 발표용 이미지 저장</span></div></section>
+<section id="game" hidden>
+<div class="world-head"><div><p class="eyebrow" style="margin-bottom:6px">나의 기후 탐험</p><h1 id="worldTitle" style="margin:0"></h1></div><button id="homeButton">기후 선택</button></div><p id="worldSubtitle" class="muted"></p>
+<div class="workspace">
+<aside class="panel missions"><h3>오늘의 미션</h3><p id="progressText" class="small muted"></p><progress id="progress" value="0" max="5" aria-label="미션 진행"></progress><div id="missionList" class="mission-list"></div><p class="small muted" style="margin-top:15px">정답보다 중요한 건<br>선택한 까닭을 생각하는 거예요.</p></aside>
+<section><div class="world-head"><h2>우리 모둠의 마을 · 3D</h2><span id="blockCount" class="badge">블록 0개</span></div><div class="world-box" id="worldBox"><canvas id="world" width="800" height="800" tabindex="0" aria-label="입체 블록 월드. 블록 윗면과 옆면을 눌러 쌓기. 둘러보기 모드에서 드래그로 회전. 방향키로 땅의 칸 이동, 엔터로 편집할 수 있습니다."></canvas></div><div class="world-caption"><span id="toolCaption">땅이나 블록 면을 눌러 쌓아요</span><span>16 × 16칸 · 3D</span></div><div class="camera-tools"><button id="cameraMode" class="wide" aria-pressed="false">↔ 둘러보기로 전환</button><button id="panLeft" aria-label="시점 왼쪽으로 회전">↶ 왼쪽 회전</button><button id="panRight" aria-label="시점 오른쪽으로 회전">오른쪽 회전 ↷</button><button id="zoomIn" aria-label="월드 확대">＋ 확대</button><button id="zoomOut" aria-label="월드 축소">− 축소</button><button id="cameraReset">시점 초기화</button></div><div class="feedback small">블록 면을 눌러 쌓아요 · 둘러보기에서 끌어 회전 · 두 손가락으로 확대</div><div id="feedback" class="feedback" role="status" aria-live="polite"></div></section>
+<aside><div class="panel"><h2 id="panelTitle">기후 알아보기</h2><div class="tabs" role="group" aria-label="활동 선택"><button data-tab="house">집</button><button data-tab="clothes">옷</button><button data-tab="food">음식</button><button data-tab="reason">이유</button></div><div id="activity"></div></div><div class="panel save-box"><h3>마을을 발표해요</h3><p id="saveHelp" class="small">미션 5개를 마치면 발표용 이미지를 저장할 수 있어요.</p><button id="exportButton" class="primary full" disabled>마을 이미지 저장</button><p id="saveStatus" class="muted" role="status" aria-live="polite"></p></div><button id="guideButton" class="full" style="margin-top:12px">? 조작 안내</button></aside>
+</div></section>
+<details class="teacher"><summary>선생님용 · 학습 자료와 수업 준비</summary><div class="teacher-content"><p>6개 기후의 의식주와 이유 카드 18장을 담았습니다. 수정한 학습 자료를 불러와 수업 내용에 맞출 수 있어요.</p><p>학습 내용은 <strong>climate-data.json</strong>에서 수정하고, 수정한 파일을 아래에서 불러오세요. 인터넷은 필요하지 않습니다.</p><label>학습 자료 불러오기 <input id="importData" type="file" accept=".json,application/json"></label><p id="dataStatus" role="status" aria-live="polite"></p><button id="downloadData">현재 학습 자료 내려받기</button><p class="small">작업은 이 브라우저에 자동 저장됩니다. 다른 앱·브라우저로 열거나 브라우저 데이터를 지우면 이어하기 기록이 달라질 수 있습니다.</p><button id="resetButton">현재 마을 새로 만들기</button></div></details>
+</div>
+<dialog id="guide"><h2>입체 마을을 만들어요!</h2><div class="guide-step"><span>🧱</span><p>땅을 누르면 블록이 놓여요.<br>블록 윗면과 옆면을 눌러 이어 쌓아요.</p></div><div class="guide-step"><span>☝</span><p>‘부수기’로 블록을 지워요.<br>‘둘러보기’에서 끌면 시점이 돌아가요.</p></div><div class="guide-step"><span>🌾</span><p>음식 탭에서 식재료 표시를 눌러요.<br>두 손가락으로 월드를 확대할 수 있어요.</p></div><p class="small muted" style="margin-top:16px">미션은 원하는 순서로 해도 괜찮아요.</p><button id="closeGuide" class="primary full">내 마을 만들기</button></dialog>
+<dialog id="imageDialog"><h2>발표용 마을 이미지</h2><p>다운로드가 안 되면 이미지를 길게 눌러 저장해주세요.</p><img id="previewImage" alt="내가 만든 마을과 의식주 선택 및 이유 카드 답변"><button id="downloadImage" class="primary full">이미지 내려받기</button><button id="shareImage" class="full" style="margin-top:8px" hidden>파일 공유</button><button id="closeImage" class="full" style="margin-top:8px">닫기</button></dialog>
+<dialog id="resetDialog"><h2>새 마을을 만들까요?</h2><p>현재 마을과 미션 기록을 지우고 처음부터 시작합니다.</p><button id="confirmReset" class="primary full">새로 만들기</button><button id="cancelReset" class="full" style="margin-top:8px">돌아가기</button></dialog>
+<script id="defaultData" type="application/json">{
+    "version":  1,
+    "climates":  [
+                     {
+                         "id":  "dry",
+                         "name":  "건조 기후",
+                         "icon":  "☀️",
+                         "subtitle":  "햇빛 가득한 모래 마을",
+                         "facts":  [
+                                       "비가 적게 내려요.",
+                                       "낮과 밤의 기온 차가 커요."
+                                   ],
+                         "sky":  "#fbe7bd",
+                         "ground":  "#d8ab70",
+                         "accent":  "#aa5a2e",
+                         "houseTip":  "흙벽돌로 두꺼운 벽을 만들고, 창은 작게 내보세요.",
+                         "houseRule":  {
+                                           "minBlocks":  8,
+                                           "requireDoor":  true,
+                                           "requireRoof":  true
+                                       },
+                         "materials":  [
+                                           {
+                                               "id":  "mud",
+                                               "name":  "흙벽돌",
+                                               "color":  "#c58b62",
+                                               "type":  "brick",
+                                               "suitable":  true,
+                                               "hint":  "흙벽돌을 쌓아 두꺼운 벽을 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "roof",
+                                               "name":  "지붕",
+                                               "color":  "#a66a48",
+                                               "type":  "roof",
+                                               "suitable":  true,
+                                               "hint":  "지붕 아래에서 햇빛을 피할 수 있어요."
+                                           },
+                                           {
+                                               "id":  "door",
+                                               "name":  "문",
+                                               "color":  "#815438",
+                                               "type":  "door",
+                                               "suitable":  true,
+                                               "hint":  "사람이 들어갈 문도 만들어주세요."
+                                           },
+                                           {
+                                               "id":  "window",
+                                               "name":  "작은 창",
+                                               "color":  "#9bc9cd",
+                                               "type":  "window",
+                                               "suitable":  true,
+                                               "hint":  "작은 창으로 강한 햇빛을 줄여보세요."
+                                           },
+                                           {
+                                               "id":  "ice",
+                                               "name":  "얼음",
+                                               "color":  "#c0e8ee",
+                                               "type":  "ice",
+                                               "suitable":  false,
+                                               "hint":  "여기 날씨는 어떤지 다시 볼까요? 강한 햇빛 아래 얼음집은 어떻게 될까요?"
+                                           }
+                                       ],
+                         "clothes":  [
+                                         {
+                                             "id":  "loose",
+                                             "name":  "헐렁한 긴 옷",
+                                             "icon":  "👘",
+                                             "color":  "#f5efda",
+                                             "style":  "long",
+                                             "suitable":  true,
+                                             "hint":  "몸을 감싸는 헐렁한 옷을 골랐네요. 햇빛과 모래바람을 떠올려보세요."
+                                         },
+                                         {
+                                             "id":  "short",
+                                             "name":  "짧은 반팔 옷",
+                                             "icon":  "👕",
+                                             "color":  "#70b8bd",
+                                             "style":  "short",
+                                             "suitable":  false,
+                                             "hint":  "더워도 피부를 많이 드러내면 어떨까요? 햇빛과 모래바람을 다시 살펴보세요."
+                                         },
+                                         {
+                                             "id":  "fur",
+                                             "name":  "두꺼운 모피 옷",
+                                             "icon":  "🧥",
+                                             "color":  "#946a50",
+                                             "style":  "fur",
+                                             "suitable":  false,
+                                             "hint":  "낮에도 두꺼운 옷을 입으면 어떨까요? 낮과 밤의 기온 차를 생각해보세요."
+                                         }
+                                     ],
+                         "ingredients":  [
+                                             {
+                                                 "id":  "wheat",
+                                                 "name":  "밀",
+                                                 "icon":  "🌾",
+                                                 "color":  "#dbaf43",
+                                                 "x":  2,
+                                                 "y":  14
+                                             },
+                                             {
+                                                 "id":  "date",
+                                                 "name":  "대추야자",
+                                                 "icon":  "🌴",
+                                                 "color":  "#866044",
+                                                 "x":  13,
+                                                 "y":  12
+                                             },
+                                             {
+                                                 "id":  "goat",
+                                                 "name":  "염소 젖",
+                                                 "icon":  "🥛",
+                                                 "color":  "#f6f0dd",
+                                                 "x":  13,
+                                                 "y":  15
+                                             }
+                                         ],
+                         "foodTip":  "월드의 식재료를 눌러 모은 뒤 음식을 만들어보세요.",
+                         "recipes":  [
+                                         {
+                                             "id":  "bread",
+                                             "name":  "대추야자 곁들인 밀빵",
+                                             "icon":  "🥖",
+                                             "needs":  [
+                                                           "wheat",
+                                                           "date"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "밀과 대추야자를 이용했네요. 이곳에서 구할 수 있는 식재료와 연결해보세요."
+                                         },
+                                         {
+                                             "id":  "milk",
+                                             "name":  "염소 젖과 대추야자",
+                                             "icon":  "🥛",
+                                             "needs":  [
+                                                           "goat",
+                                                           "date"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "염소와 대추야자를 이용했네요. 지역의 식재료가 식생활로 이어져요."
+                                         }
+                                     ],
+                         "questions":  [
+                                           {
+                                               "id":  "house",
+                                               "title":  "왜 두꺼운 벽과 작은 창을 만들까요?",
+                                               "options":  [
+                                                               "비가 많이 와서 바닥을 높이려고",
+                                                               "눈이 지붕에 쌓이지 않게 하려고",
+                                                               "강한 햇빛과 낮밤의 기온 차에 대비하려고",
+                                                               "물이 집 안으로 잘 흐르게 하려고",
+                                                               "산소가 부족해서 공기를 더 넣으려고"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "건조 기후의 햇빛과 낮밤의 기온 차를 다시 떠올려보세요.",
+                                               "explanation":  "두꺼운 벽과 작은 창은 강한 햇빛과 큰 일교차에 대비하는 데 도움을 줘요."
+                                           },
+                                           {
+                                               "id":  "clothes",
+                                               "title":  "왜 몸을 감싸는 헐렁한 옷을 입을까요?",
+                                               "options":  [
+                                                               "몸을 햇빛과 모래바람으로부터 보호하려고",
+                                                               "연중 눈이 내려서 체온을 높이려고",
+                                                               "비에 젖은 옷을 더 무겁게 하려고",
+                                                               "강한 햇빛이 피부에 더 많이 닿게 하려고",
+                                                               "산소를 더 많이 들이마시려고"
+                                                           ],
+                                               "answer":  0,
+                                               "hint":  "여기서 피부를 보호해야 하는 까닭은 무엇일까요? 햇빛과 모래바람을 살펴보세요.",
+                                               "explanation":  "몸을 감싸는 헐렁한 옷은 햇빛과 모래바람으로부터 몸을 보호해요."
+                                           },
+                                           {
+                                               "id":  "food",
+                                               "title":  "왜 대추야자를 이용한 음식을 먹을까요?",
+                                               "options":  [
+                                                               "비가 적으면 어떤 식물도 물이 필요 없어서",
+                                                               "밀은 오직 건조 기후에서만 자라서",
+                                                               "비가 적게 오는 모래땅에서도 잘 자라며 에너지를 빠르게 채워주기 때문",
+                                                               "대추야자는 눈 속에서 잘 자라서",
+                                                               "음식은 기후와 언제나 아무 관계가 없어서"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "모든 건조 지역이 같지는 않아요. 내가 모은 지역 식재료와 음식을 연결해보세요.",
+                                               "explanation":  "지역에서 구할 수 있는 밀과 대추야자 등의 식재료를 음식에 이용해요."
+                                           }
+                                       ]
+                     },
+                     {
+                         "id":  "tropical",
+                         "name":  "열대 기후",
+                         "icon":  "🌿",
+                         "subtitle":  "비가 많은 열대 지역의 초록 마을",
+                         "biome":  "tropical",
+                         "sky":  "#d3ebe4",
+                         "ground":  "#7fac6c",
+                         "accent":  "#31734e",
+                         "houseTip":  "나무 기둥 위에 바닥을 띄우고, 풀 지붕을 얹어보세요.",
+                         "houseRule":  {
+                                           "minBlocks":  8,
+                                           "requireDoor":  true,
+                                           "requireRoof":  true,
+                                           "requireRaised":  true
+                                       },
+                         "materials":  [
+                                           {
+                                               "id":  "wood",
+                                               "name":  "나무 벽",
+                                               "color":  "#bc905f",
+                                               "type":  "wood",
+                                               "suitable":  true,
+                                               "hint":  "주변에서 구하는 나무로 집을 만들어보세요."
+                                           },
+                                           {
+                                               "id":  "post",
+                                               "name":  "받침 기둥",
+                                               "color":  "#8a633e",
+                                               "type":  "post",
+                                               "suitable":  true,
+                                               "hint":  "땅에 기둥을 세우고 그 위에 바닥을 만들어보세요."
+                                           },
+                                           {
+                                               "id":  "floor",
+                                               "name":  "높인 바닥",
+                                               "color":  "#c5a270",
+                                               "type":  "floor",
+                                               "suitable":  true,
+                                               "hint":  "기둥 위 2층 이상에 바닥을 놓아 물과 습기를 피하도록 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "roof",
+                                               "name":  "풀 지붕",
+                                               "color":  "#81a15d",
+                                               "type":  "roof",
+                                               "suitable":  true,
+                                               "hint":  "나무 집 위에 풀 재료의 지붕을 얹어보세요."
+                                           },
+                                           {
+                                               "id":  "door",
+                                               "name":  "나무 문",
+                                               "color":  "#886745",
+                                               "type":  "door",
+                                               "suitable":  true,
+                                               "hint":  "높인 바닥으로 들어가는 문을 만들어주세요."
+                                           },
+                                           {
+                                               "id":  "window",
+                                               "name":  "통풍 창",
+                                               "color":  "#b6d9cb",
+                                               "type":  "window",
+                                               "suitable":  true,
+                                               "hint":  "창을 통해 공기가 드나드는 모습을 생각해보세요."
+                                           },
+                                           {
+                                               "id":  "ice",
+                                               "name":  "얼음 벽",
+                                               "color":  "#c0e8ee",
+                                               "type":  "ice",
+                                               "suitable":  false,
+                                               "hint":  "일 년 내내 더운 곳에서 얼음으로 만든 벽은 어떻게 될까요?"
+                                           }
+                                       ],
+                         "clothes":  [
+                                         {
+                                             "id":  "light",
+                                             "name":  "얇은 통풍 옷",
+                                             "icon":  "👕",
+                                             "color":  "#f8e7a5",
+                                             "style":  "short",
+                                             "suitable":  true,
+                                             "hint":  "얇고 통풍되는 옷으로 몸의 열을 내보내는 모습을 생각해보세요."
+                                         },
+                                         {
+                                             "id":  "fur",
+                                             "name":  "두꺼운 모피 옷",
+                                             "icon":  "🧥",
+                                             "color":  "#926f52",
+                                             "style":  "fur",
+                                             "suitable":  false,
+                                             "hint":  "덥고 습한 날에 두꺼운 옷을 입으면 어떨까요?"
+                                         },
+                                         {
+                                             "id":  "layers",
+                                             "name":  "여러 겹의 겨울옷",
+                                             "icon":  "🧣",
+                                             "color":  "#98a4c7",
+                                             "style":  "layers",
+                                             "suitable":  false,
+                                             "hint":  "몸을 따뜻하게 해야 할까요, 몸의 열을 내보내야 할까요?"
+                                         }
+                                     ],
+                         "ingredients":  [
+                                             {
+                                                 "id":  "rice",
+                                                 "name":  "쌀",
+                                                 "icon":  "🌾",
+                                                 "color":  "#e7cf83",
+                                                 "x":  2,
+                                                 "y":  14
+                                             },
+                                             {
+                                                 "id":  "spice",
+                                                 "name":  "향신료",
+                                                 "icon":  "🌶️",
+                                                 "color":  "#cb6c4f",
+                                                 "x":  13,
+                                                 "y":  12
+                                             },
+                                             {
+                                                 "id":  "lime",
+                                                 "name":  "라임",
+                                                 "icon":  "🍋",
+                                                 "color":  "#93ad58",
+                                                 "x":  13,
+                                                 "y":  15
+                                             }
+                                         ],
+                         "foodTip":  "쌀·향신료·라임을 모아 매콤새콤한 음식의 생활 사례를 만들어보세요.",
+                         "recipes":  [
+                                         {
+                                             "id":  "spicedrice",
+                                             "name":  "매콤새콤한 향신료 밥",
+                                             "icon":  "🍛",
+                                             "needs":  [
+                                                           "rice",
+                                                           "spice",
+                                                           "lime"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "향신료가 들어간 음식을 골랐네요. 더위와 습기, 입맛을 이유 카드에서 연결해보세요."
+                                         }
+                                     ],
+                         "facts":  [
+                                       "일 년 내내 더워요.",
+                                       "이 사례 지역은 비가 많이 내려요."
+                                   ],
+                         "questions":  [
+                                           {
+                                               "id":  "house",
+                                               "title":  "왜 집의 바닥을 땅보다 높게 만들까요?",
+                                               "options":  [
+                                                               "추운 겨울에 땅의 열을 집 안으로 모으려고",
+                                                               "낮과 밤의 큰 기온 차를 두꺼운 벽으로 줄이려고",
+                                                               "비가 많이 올 때 물과 땅의 습기를 피하려고",
+                                                               "지붕에 쌓인 눈을 더 빨리 떨어뜨리려고",
+                                                               "비가 적은 지역에서 빗물을 땅에 모으려고"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "비가 많이 내리면 땅은 어떻게 될까요? 집의 바닥과 물의 높이를 비교해보세요.",
+                                               "explanation":  "비가 많은 지역에서는 집의 바닥을 높여 물과 땅의 습기에 대비할 수 있어요."
+                                           },
+                                           {
+                                               "id":  "clothes",
+                                               "title":  "왜 덥고 습한 날에는 얇고 통풍이 잘되는 옷을 입을까요?",
+                                               "options":  [
+                                                               "몸 주변의 공기가 통하고 열이 빠져나가게 하려고",
+                                                               "긴 겨울 동안 몸의 열이 빠져나가지 않게 하려고",
+                                                               "모래바람을 막기 위해 옷을 두껍고 무겁게 하려고",
+                                                               "추운 밤을 대비해 두꺼운 옷을 여러 겹 입으려고",
+                                                               "바람이 옷 안으로 들어오지 못하도록 막으려고"
+                                                           ],
+                                               "answer":  0,
+                                               "hint":  "이곳에서는 몸을 더 따뜻하게 해야 할까요, 몸의 열을 내보내야 할까요?",
+                                               "explanation":  "덥고 습한 날에는 얇고 통풍이 잘되는 옷으로 몸의 열을 내보내는 데 도움을 받을 수 있어요."
+                                           },
+                                           {
+                                               "id":  "food",
+                                               "title":  "왜 매콤새콤한 향신료가 들어간 음식을 먹을까요?",
+                                               "options":  [
+                                                               "날씨가 추워 몸을 따뜻하게 녹여줄 재료가 필요해서",
+                                                               "기온이 낮아 음식을 오랫동안 신선하게 보관할 수 있어서",
+                                                               "날씨가 덥고 습해 음식을 오랫동안 보관하고 입맛을 돋우기 위해서",
+                                                               "눈이 많이 내리는 지역이라 향신료를 구하기가 아주 쉬워서",
+                                                               "물이 부족한 건조한 지역에서 물 대신 마시기 위해서"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "날씨가 아주 덥고 습할 때 음식은 어떻게 변할까요? 음식을 상하지 않게 지켜주고 입맛을 살려주는 방법을 연결해보세요.",
+                                               "explanation":  "열대기후 지역은 날씨가 매우 덥고 습해서 음식을 그대로 두면 쉽게 상해요. 그래서 음식을 오래 보관하고, 더위로 잃어버린 입맛을 돋우기 위해 향신료를 많이 사용해요."
+                                           }
+                                       ]
+                     },
+                     {
+                         "id":  "temperate",
+                         "name":  "온대 기후 · 지중해성",
+                         "icon":  "🌤️",
+                         "subtitle":  "햇빛을 반사하는 하얀 벽의 마을",
+                         "biome":  "temperate",
+                         "sky":  "#d9edf4",
+                         "ground":  "#b6c98b",
+                         "accent":  "#387c9b",
+                         "houseTip":  "집 외벽을 하얗게 하고 작은 창을 내 강한 여름 햇빛에 대비해보세요.",
+                         "houseRule":  {
+                                           "minBlocks":  8,
+                                           "requireDoor":  true,
+                                           "requireRoof":  true
+                                       },
+                         "materials":  [
+                                           {
+                                               "id":  "white",
+                                               "name":  "하얀 벽돌",
+                                               "color":  "#f6f2e8",
+                                               "type":  "brick",
+                                               "suitable":  true,
+                                               "hint":  "하얀 벽이 강한 햇빛을 반사하는 모습을 생각해보세요."
+                                           },
+                                           {
+                                               "id":  "stone",
+                                               "name":  "돌 벽",
+                                               "color":  "#b9b6a4",
+                                               "type":  "stone",
+                                               "suitable":  true,
+                                               "hint":  "두꺼운 돌 벽으로 집을 만들어보세요."
+                                           },
+                                           {
+                                               "id":  "roof",
+                                               "name":  "지붕",
+                                               "color":  "#709db3",
+                                               "type":  "roof",
+                                               "suitable":  true,
+                                               "hint":  "지붕을 얹어 집을 완성해보세요."
+                                           },
+                                           {
+                                               "id":  "door",
+                                               "name":  "문",
+                                               "color":  "#638daa",
+                                               "type":  "door",
+                                               "suitable":  true,
+                                               "hint":  "여름 햇빛을 피해 들어갈 문을 만들어주세요."
+                                           },
+                                           {
+                                               "id":  "window",
+                                               "name":  "작은 창",
+                                               "color":  "#b9dce4",
+                                               "type":  "window",
+                                               "suitable":  true,
+                                               "hint":  "강한 햇빛을 줄이는 작은 창을 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "dark",
+                                               "name":  "짙은 외벽",
+                                               "color":  "#4d4540",
+                                               "type":  "brick",
+                                               "suitable":  false,
+                                               "hint":  "밝은 벽과 어두운 벽 중 어떤 벽이 햇빛을 더 많이 반사할까요?"
+                                           }
+                                       ],
+                         "clothes":  [
+                                         {
+                                             "id":  "bright",
+                                             "name":  "밝고 헐렁한 옷",
+                                             "icon":  "👘",
+                                             "color":  "#f8f4e6",
+                                             "style":  "long",
+                                             "suitable":  true,
+                                             "hint":  "밝은색과 통풍이 강한 여름 햇빛에 어떻게 도움이 될까요?"
+                                         },
+                                         {
+                                             "id":  "dark",
+                                             "name":  "짙고 몸에 붙는 옷",
+                                             "icon":  "👕",
+                                             "color":  "#4c4e5b",
+                                             "style":  "short",
+                                             "suitable":  false,
+                                             "hint":  "밝은색과 어두운색, 헐렁한 옷과 붙는 옷을 비교해보세요."
+                                         },
+                                         {
+                                             "id":  "fur",
+                                             "name":  "두꺼운 모피 옷",
+                                             "icon":  "🧥",
+                                             "color":  "#a08067",
+                                             "style":  "fur",
+                                             "suitable":  false,
+                                             "hint":  "이 활동은 여름 옷에 관한 사례예요. 여름 날씨를 다시 살펴보세요."
+                                         }
+                                     ],
+                         "ingredients":  [
+                                             {
+                                                 "id":  "olive",
+                                                 "name":  "올리브",
+                                                 "icon":  "🫒",
+                                                 "color":  "#7d9654",
+                                                 "x":  2,
+                                                 "y":  14
+                                             },
+                                             {
+                                                 "id":  "wheat",
+                                                 "name":  "밀",
+                                                 "icon":  "🌾",
+                                                 "color":  "#ddc070",
+                                                 "x":  13,
+                                                 "y":  12
+                                             },
+                                             {
+                                                 "id":  "grape",
+                                                 "name":  "포도",
+                                                 "icon":  "🍇",
+                                                 "color":  "#8c79a6",
+                                                 "x":  13,
+                                                 "y":  15
+                                             }
+                                         ],
+                         "foodTip":  "올리브와 밀을 모아 지역 식재료를 이용한 음식을 만들어보세요.",
+                         "recipes":  [
+                                         {
+                                             "id":  "olivebread",
+                                             "name":  "올리브 곁들인 밀빵",
+                                             "icon":  "🥖",
+                                             "needs":  [
+                                                           "olive",
+                                                           "wheat"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "올리브와 이곳의 건조한 여름을 이유 카드에서 연결해보세요."
+                                         },
+                                         {
+                                             "id":  "oliveplate",
+                                             "name":  "올리브와 포도 한 접시",
+                                             "icon":  "🫒",
+                                             "needs":  [
+                                                           "olive",
+                                                           "grape"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "지역에서 재배하는 식재료를 함께 모았네요."
+                                         }
+                                     ],
+                         "facts":  [
+                                       "여름에는 덥고 비가 적어요.",
+                                       "겨울에는 비교적 온화하고 비가 내려요."
+                                   ],
+                         "questions":  [
+                                           {
+                                               "id":  "house",
+                                               "title":  "왜 햇빛이 강한 여름에 대비해 집 외벽을 하얗게 칠할까요?",
+                                               "options":  [
+                                                               "겨울의 눈을 지붕 위에 오래 쌓아두려고",
+                                                               "햇빛을 반사해 집이 뜨거워지는 것을 줄이려고",
+                                                               "벽이 햇빛을 더 많이 흡수하게 하려고",
+                                                               "여름에 내리는 많은 비를 벽 안에 저장하려고",
+                                                               "바람이 벽을 더 쉽게 통과하게 하려고"
+                                                           ],
+                                               "answer":  1,
+                                               "hint":  "강한 햇빛을 받을 때 밝은색과 어두운색 중 어떤 색이 빛을 더 많이 반사할까요?",
+                                               "explanation":  "하얀 외벽은 햇빛을 반사해 여름에 집이 뜨거워지는 것을 줄이는 데 도움을 줘요."
+                                           },
+                                           {
+                                               "id":  "clothes",
+                                               "title":  "왜 여름에 밝은색의 헐렁한 옷을 입을까요?",
+                                               "options":  [
+                                                               "긴 겨울의 추위를 막으려고 두꺼운 모피를 겹쳐 입기 위해",
+                                                               "햇빛을 많이 흡수하고 몸의 열이 빠져나가지 않게 하려고",
+                                                               "여름철에 매일 내리는 비를 옷에 오래 머물게 하려고",
+                                                               "옷 안으로 공기가 전혀 들어오지 않도록 막으려고",
+                                                               "햇빛의 열을 덜 흡수하고 공기가 잘 통하게 하려고"
+                                                           ],
+                                               "answer":  4,
+                                               "hint":  "이 카드는 여름 옷에 관한 질문이에요. 밝은색과 헐렁한 모양이 각각 어떤 도움을 줄까요?",
+                                               "explanation":  "밝은색은 햇빛의 열을 덜 흡수하는 데, 헐렁한 옷은 공기가 통하는 데 도움을 줘요."
+                                           },
+                                           {
+                                               "id":  "food",
+                                               "title":  "왜 올리브를 이용한 음식을 먹을까요?",
+                                               "options":  [
+                                                               "여름이 건조한 지역에서도 재배하는 올리브를 이용해서",
+                                                               "올리브가 추운 겨울의 얼음 밑에서 자라서",
+                                                               "올리브가 물 없이도 언제나 열매를 맺어서",
+                                                               "여름에 매일 많은 비가 와야만 올리브를 기를 수 있어서",
+                                                               "올리브가 높은 산에서만 재배되는 작물이어서"
+                                                           ],
+                                               "answer":  0,
+                                               "hint":  "이곳의 여름에는 비가 많을까요, 적을까요? 올리브나무가 건조함을 견디는 특성과 연결해보세요.",
+                                               "explanation":  "올리브는 지중해성 지역에서 재배하는 대표적인 작물 중 하나예요. 여름의 건조함을 비교적 잘 견디는 특성을 이용해요."
+                                           }
+                                       ]
+                     },
+                     {
+                         "id":  "continental",
+                         "name":  "냉대 기후",
+                         "icon":  "🌲",
+                         "subtitle":  "긴 겨울에 대비하는 통나무 마을",
+                         "biome":  "continental",
+                         "sky":  "#dce5e9",
+                         "ground":  "#7e927c",
+                         "accent":  "#48634c",
+                         "houseTip":  "통나무 벽과 작은 창을 만들고, 눈을 흘려보낼 경사진 지붕을 얹어보세요.",
+                         "houseRule":  {
+                                           "minBlocks":  8,
+                                           "requireDoor":  true,
+                                           "requireRoof":  true
+                                       },
+                         "materials":  [
+                                           {
+                                               "id":  "wood",
+                                               "name":  "통나무 벽",
+                                               "color":  "#b18b63",
+                                               "type":  "wood",
+                                               "suitable":  true,
+                                               "hint":  "통나무를 이어 두꺼운 벽을 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "roof",
+                                               "name":  "경사진 지붕",
+                                               "color":  "#657375",
+                                               "type":  "roofSlope",
+                                               "suitable":  true,
+                                               "hint":  "경사진 지붕 위에서 눈이 어떻게 내려갈까요?"
+                                           },
+                                           {
+                                               "id":  "door",
+                                               "name":  "작은 문",
+                                               "color":  "#886648",
+                                               "type":  "door",
+                                               "suitable":  true,
+                                               "hint":  "따뜻함을 지키도록 문을 만들어보세요."
+                                           },
+                                           {
+                                               "id":  "window",
+                                               "name":  "작은 창",
+                                               "color":  "#c4dce1",
+                                               "type":  "window",
+                                               "suitable":  true,
+                                               "hint":  "추운 날 창이 많고 크면 어떨까요?"
+                                           },
+                                           {
+                                               "id":  "grass",
+                                               "name":  "얇은 풀 벽",
+                                               "color":  "#a5be77",
+                                               "type":  "grass",
+                                               "suitable":  false,
+                                               "hint":  "겨울이 길고 추운 곳에서 얇은 벽만으로 충분할까요?"
+                                           }
+                                       ],
+                         "clothes":  [
+                                         {
+                                             "id":  "coat",
+                                             "name":  "두꺼운 겨울 외투",
+                                             "icon":  "🧥",
+                                             "color":  "#8b6653",
+                                             "style":  "fur",
+                                             "suitable":  true,
+                                             "hint":  "외투가 몸의 열을 지켜주는 이유를 생각해보세요."
+                                         },
+                                         {
+                                             "id":  "layers",
+                                             "name":  "목도리와 겹옷",
+                                             "icon":  "🧣",
+                                             "color":  "#a78272",
+                                             "style":  "layers",
+                                             "suitable":  true,
+                                             "hint":  "겹쳐 입어 긴 겨울의 추위에 대비했네요."
+                                         },
+                                         {
+                                             "id":  "short",
+                                             "name":  "얇은 반팔 옷",
+                                             "icon":  "👕",
+                                             "color":  "#d5bd87",
+                                             "style":  "short",
+                                             "suitable":  false,
+                                             "hint":  "긴 겨울에는 몸의 열을 내보내야 할까요, 지켜야 할까요?"
+                                         }
+                                     ],
+                         "ingredients":  [
+                                             {
+                                                 "id":  "potato",
+                                                 "name":  "감자",
+                                                 "icon":  "🥔",
+                                                 "color":  "#bc9873",
+                                                 "x":  2,
+                                                 "y":  14
+                                             },
+                                             {
+                                                 "id":  "rye",
+                                                 "name":  "호밀",
+                                                 "icon":  "🌾",
+                                                 "color":  "#ccb582",
+                                                 "x":  13,
+                                                 "y":  12
+                                             },
+                                             {
+                                                 "id":  "jar",
+                                                 "name":  "보관 용기",
+                                                 "icon":  "🫙",
+                                                 "color":  "#b6c7bf",
+                                                 "x":  13,
+                                                 "y":  15
+                                             }
+                                         ],
+                         "foodTip":  "감자나 호밀을 모으고 보관 용기를 찾아 겨울 음식을 준비해보세요.",
+                         "recipes":  [
+                                         {
+                                             "id":  "storedpotato",
+                                             "name":  "겨울을 위한 감자 저장",
+                                             "icon":  "🥔",
+                                             "needs":  [
+                                                           "potato",
+                                                           "jar"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "수확한 때와 먹을 때를 연결해 겨울 음식 준비를 생각해보세요."
+                                         },
+                                         {
+                                             "id":  "ryebread",
+                                             "name":  "저장 호밀로 만든 빵",
+                                             "icon":  "🍞",
+                                             "needs":  [
+                                                           "rye",
+                                                           "jar"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "긴 겨울을 위해 곡물을 보관하는 까닭을 떠올려보세요."
+                                         }
+                                     ],
+                         "facts":  [
+                                       "겨울이 길고 추워요.",
+                                       "여기서는 눈이 많이 내리는 지역의 생활을 살펴봐요."
+                                   ],
+                         "questions":  [
+                                           {
+                                               "id":  "house",
+                                               "title":  "눈이 많이 내리는 곳에서는 왜 지붕을 경사지게 만들까요?",
+                                               "options":  [
+                                                               "여름의 강한 햇빛을 하얀 벽으로 반사하려고",
+                                                               "비가 적은 계절에 지붕 위에서 곡물을 기르려고",
+                                                               "눈이 지붕에서 흘러내려 많이 쌓이는 것을 줄이려고",
+                                                               "땅에 고인 물을 피하도록 집의 바닥을 높이려고",
+                                                               "지붕 위에 눈을 더 많이 모아 무게를 늘리려고"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "눈이 지붕에 많이 쌓이면 무게가 어떻게 될까요? 평평한 면과 경사진 면을 비교해보세요.",
+                                               "explanation":  "경사진 지붕은 눈이 흘러내리게 해 지붕 위에 많이 쌓이는 것을 줄이는 데 도움을 줘요."
+                                           },
+                                           {
+                                               "id":  "clothes",
+                                               "title":  "긴 겨울에 왜 두꺼운 외투를 입을까요?",
+                                               "options":  [
+                                                               "더운 날에 몸의 열을 더 빨리 밖으로 내보내려고",
+                                                               "강한 햇빛을 피부에 더 많이 닿게 하려고",
+                                                               "몸을 차게 하도록 찬바람이 잘 통하게 하려고",
+                                                               "몸의 열이 빠져나가는 것을 줄여 추위에 대비하려고",
+                                                               "비가 적은 여름에 옷을 가볍게 만들려고"
+                                                           ],
+                                               "answer":  3,
+                                               "hint":  "겨울이 길고 추운 곳에서는 몸의 열을 내보내야 할까요, 지켜야 할까요?",
+                                               "explanation":  "두꺼운 외투는 몸의 열이 빠져나가는 것을 줄여 긴 겨울의 추위에 대비하도록 도와줘요."
+                                           },
+                                           {
+                                               "id":  "food",
+                                               "title":  "왜 수확한 감자나 곡물을 겨울에 먹을 수 있도록 저장할까요?",
+                                               "options":  [
+                                                               "겨울에는 모든 작물이 여름보다 더 빨리 자라서",
+                                                               "긴 겨울에 농작물을 기르기 어려워 먹을 것을 미리 마련하려고",
+                                                               "감자와 곡물은 보관할수록 저절로 계속 늘어나서",
+                                                               "이곳에서는 바다에서만 식재료를 구할 수 있어서",
+                                                               "저장한 음식은 기후와 상관없이 절대로 상하지 않아서"
+                                                           ],
+                                               "answer":  1,
+                                               "hint":  "눈이 덮이고 날씨가 추운 동안 밭에서 계속 수확할 수 있을까요? 수확하는 때와 먹는 때를 연결해보세요.",
+                                               "explanation":  "긴 겨울에는 농작물을 기르기 어려울 수 있어요. 수확한 식재료를 알맞게 저장해 겨울 음식으로 이용해요."
+                                           }
+                                       ]
+                     },
+                     {
+                         "id":  "polar",
+                         "name":  "한대 기후 · 북극권 사례",
+                         "icon":  "❄️",
+                         "subtitle":  "찬바람을 막는 눈과 얼음의 마을",
+                         "biome":  "polar",
+                         "sky":  "#ddeef7",
+                         "ground":  "#dce9e9",
+                         "accent":  "#4d7d97",
+                         "houseTip":  "작은 문과 창을 만들고 벽 사이 틈을 막아 보온하는 집을 표현해보세요.",
+                         "houseRule":  {
+                                           "minBlocks":  8,
+                                           "requireDoor":  true,
+                                           "requireRoof":  true
+                                       },
+                         "materials":  [
+                                           {
+                                               "id":  "snow",
+                                               "name":  "단단한 눈 블록",
+                                               "color":  "#eaf1ec",
+                                               "type":  "snow",
+                                               "suitable":  true,
+                                               "hint":  "주변의 눈을 이용한 전통 집 사례를 만들어볼 수 있어요."
+                                           },
+                                           {
+                                               "id":  "ice",
+                                               "name":  "얼음 블록",
+                                               "color":  "#b6dbe6",
+                                               "type":  "ice",
+                                               "suitable":  true,
+                                               "hint":  "집의 모양과 틈을 막는 방법을 생각해보세요."
+                                           },
+                                           {
+                                               "id":  "roof",
+                                               "name":  "보온 지붕",
+                                               "color":  "#d5e4e6",
+                                               "type":  "roofSlope",
+                                               "suitable":  true,
+                                               "hint":  "지붕을 덮어 따뜻함을 지키는 집을 만들어보세요."
+                                           },
+                                           {
+                                               "id":  "door",
+                                               "name":  "작은 문",
+                                               "color":  "#8e9ca0",
+                                               "type":  "door",
+                                               "suitable":  true,
+                                               "hint":  "문 틈으로 찬바람이 들어오면 어떨까요?"
+                                           },
+                                           {
+                                               "id":  "window",
+                                               "name":  "작은 창",
+                                               "color":  "#a9cbd8",
+                                               "type":  "window",
+                                               "suitable":  true,
+                                               "hint":  "열이 빠져나가지 않게 작은 창을 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "grass",
+                                               "name":  "얇은 풀 벽",
+                                               "color":  "#a3b982",
+                                               "type":  "grass",
+                                               "suitable":  false,
+                                               "hint":  "매우 추운 곳에서 얇은 풀 벽이 찬바람을 잘 막을까요?"
+                                           }
+                                       ],
+                         "clothes":  [
+                                         {
+                                             "id":  "fur",
+                                             "name":  "따뜻한 방한복",
+                                             "icon":  "🧥",
+                                             "color":  "#b29a7c",
+                                             "style":  "fur",
+                                             "suitable":  true,
+                                             "hint":  "두꺼운 옷으로 몸을 감싸 추위에 대비했네요."
+                                         },
+                                         {
+                                             "id":  "layers",
+                                             "name":  "겹옷과 목도리",
+                                             "icon":  "🧣",
+                                             "color":  "#9eafba",
+                                             "style":  "layers",
+                                             "suitable":  true,
+                                             "hint":  "옷을 겹쳐 입어 체온을 지키는 모습을 생각해보세요."
+                                         },
+                                         {
+                                             "id":  "short",
+                                             "name":  "얇은 반팔 옷",
+                                             "icon":  "👕",
+                                             "color":  "#b9d9cb",
+                                             "style":  "short",
+                                             "suitable":  false,
+                                             "hint":  "매우 추운 날에 피부를 많이 드러내면 어떨까요?"
+                                         }
+                                     ],
+                         "ingredients":  [
+                                             {
+                                                 "id":  "meat",
+                                                 "name":  "전통 식생활의 고기",
+                                                 "icon":  "🍖",
+                                                 "color":  "#b58372",
+                                                 "x":  2,
+                                                 "y":  14
+                                             },
+                                             {
+                                                 "id":  "fish",
+                                                 "name":  "물고기",
+                                                 "icon":  "🐟",
+                                                 "color":  "#86afb8",
+                                                 "x":  13,
+                                                 "y":  12
+                                             },
+                                             {
+                                                 "id":  "plate",
+                                                 "name":  "음식 접시",
+                                                 "icon":  "🍽️",
+                                                 "color":  "#d6e4e8",
+                                                 "x":  13,
+                                                 "y":  15
+                                             }
+                                         ],
+                         "foodTip":  "주변의 식재료를 모아 북극권 일부 지역의 전통 식생활을 살펴보세요.",
+                         "recipes":  [
+                                         {
+                                             "id":  "traditionalmeat",
+                                             "name":  "전통 생고기 음식 사례",
+                                             "icon":  "🍖",
+                                             "needs":  [
+                                                           "meat",
+                                                           "plate"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "전통 식생활의 사례를 만들었네요. 땔감과 영양소의 관계는 이유 카드에서 살펴보세요."
+                                         },
+                                         {
+                                             "id":  "fishplate",
+                                             "name":  "물고기 음식 한 접시",
+                                             "icon":  "🐟",
+                                             "needs":  [
+                                                           "fish",
+                                                           "plate"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "북극권 일부 지역에서 구하는 식재료를 모았네요."
+                                         }
+                                     ],
+                         "facts":  [
+                                       "매우 추워요.",
+                                       "작물을 기르기 어려운 지역이 많아요."
+                                   ],
+                         "questions":  [
+                                           {
+                                               "id":  "house",
+                                               "title":  "추운 곳에서는 왜 문과 창을 작게 만들고 틈을 막을까요?",
+                                               "options":  [
+                                                               "더운 여름에 집 안의 열을 빠르게 내보내려고",
+                                                               "집 안으로 물이 잘 흘러들어오게 하려고",
+                                                               "바람이 집 안을 더 많이 지나가게 하려고",
+                                                               "강한 햇빛이 집 안을 모두 비추게 하려고",
+                                                               "찬바람이 들어오는 것과 집 안의 열이 빠져나가는 것을 줄이려고"
+                                                           ],
+                                               "answer":  4,
+                                               "hint":  "아주 추운 날 집의 틈으로 바람이 들어오면 어떨까요? 따뜻한 공기를 지키는 방법을 생각해보세요.",
+                                               "explanation":  "문·창을 작게 만들고 틈을 막으면 찬바람과 열 손실을 줄이는 데 도움을 줄 수 있어요."
+                                           },
+                                           {
+                                               "id":  "clothes",
+                                               "title":  "왜 몸을 따뜻하게 감싸는 두꺼운 옷을 입을까요?",
+                                               "options":  [
+                                                               "햇빛이 강한 날에 피부를 더 많이 드러내려고",
+                                                               "더운 날 몸의 열이 쉽게 빠져나가게 하려고",
+                                                               "추운 공기로부터 몸을 보호하고 체온을 유지하려고",
+                                                               "찬바람이 옷 안으로 잘 들어오게 하려고",
+                                                               "낮과 밤의 기온을 항상 같게 만들려고"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "이곳에서는 몸이 따뜻해지도록 해야 할까요, 더 차가워지도록 해야 할까요?",
+                                               "explanation":  "따뜻한 방한복은 매우 추운 날씨에 몸을 보호하고 체온을 유지하는 데 도움을 줘요."
+                                           },
+                                           {
+                                               "id":  "food",
+                                               "title":  "왜 불에 익히지 않은 생고기(또는 날선지)를 먹을까요?",
+                                               "options":  [
+                                                               "주변에 나무나 땔감이 풍부하여 불을 피우기 귀찮아서",
+                                                               "날씨가 더워 음식을 익히면 금방 상해버리기 때문에",
+                                                               "땔감을 구하기 어렵고, 비타민과 영양소를 날것으로 섭취해야 해서",
+                                                               "눈과 얼음을 녹여 마실 물이 세상에서 가장 부족한 지역이어서",
+                                                               "이 지역에서는 과일과 채소를 일 년 내내 쉽게 재배할 수 있어서"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "얼어붙은 땅에서 과일이나 채소를 구할 수 있을까요? 몸에 필요한 영양소를 얻고 불을 피우기 어려운 환경을 연결해보세요.",
+                                               "explanation":  "북극권 같은 한대기후 지역은 날씨가 너무 추워 나무(땔감)를 구하기가 아주 힘들어요. 또한, 척박한 땅이라 채소나 과일을 기를 수 없기 때문에, 생고기를 그대로 먹음으로써 부족한 비타민과 영양소를 채워왔어요."
+                                           }
+                                       ]
+                     },
+                     {
+                         "id":  "highland",
+                         "name":  "고산 기후 · 안데스 사례",
+                         "icon":  "⛰️",
+                         "subtitle":  "낮과 밤의 추위에 대비하는 산지 마을",
+                         "biome":  "highland",
+                         "sky":  "#dce5ec",
+                         "ground":  "#aaab92",
+                         "accent":  "#77624e",
+                         "houseTip":  "돌과 흙으로 두꺼운 벽을 쌓고, 바람을 막는 작은 창을 만들어보세요.",
+                         "houseRule":  {
+                                           "minBlocks":  8,
+                                           "requireDoor":  true,
+                                           "requireRoof":  true
+                                       },
+                         "materials":  [
+                                           {
+                                               "id":  "stone",
+                                               "name":  "돌 벽",
+                                               "color":  "#a6a390",
+                                               "type":  "stone",
+                                               "suitable":  true,
+                                               "hint":  "주변의 돌로 두꺼운 벽을 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "mud",
+                                               "name":  "흙 벽돌",
+                                               "color":  "#bd9678",
+                                               "type":  "brick",
+                                               "suitable":  true,
+                                               "hint":  "돌과 흙을 이용해 밤의 추위를 막는 집을 만들어보세요."
+                                           },
+                                           {
+                                               "id":  "roof",
+                                               "name":  "경사진 지붕",
+                                               "color":  "#8d725d",
+                                               "type":  "roofSlope",
+                                               "suitable":  true,
+                                               "hint":  "산지의 눈이나 비가 내려가는 지붕을 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "door",
+                                               "name":  "작은 문",
+                                               "color":  "#876a4f",
+                                               "type":  "door",
+                                               "suitable":  true,
+                                               "hint":  "바람이 들어오는 문 틈을 생각해보세요."
+                                           },
+                                           {
+                                               "id":  "window",
+                                               "name":  "작은 창",
+                                               "color":  "#b9cfd7",
+                                               "type":  "window",
+                                               "suitable":  true,
+                                               "hint":  "밤의 추위에 대비해 창을 작게 표현해보세요."
+                                           },
+                                           {
+                                               "id":  "grass",
+                                               "name":  "얇은 풀 벽",
+                                               "color":  "#acbf83",
+                                               "type":  "grass",
+                                               "suitable":  false,
+                                               "hint":  "밤이 춥고 바람이 부는 곳에서 얇은 벽은 어떨까요?"
+                                           }
+                                       ],
+                         "clothes":  [
+                                         {
+                                             "id":  "poncho",
+                                             "name":  "겹옷과 판초",
+                                             "icon":  "🧣",
+                                             "color":  "#c68160",
+                                             "style":  "poncho",
+                                             "suitable":  true,
+                                             "hint":  "기온에 따라 더 입고 벗을 수 있는 옷을 골랐네요."
+                                         },
+                                         {
+                                             "id":  "layers",
+                                             "name":  "겹옷과 햇빛 모자",
+                                             "icon":  "🧥",
+                                             "color":  "#a39272",
+                                             "style":  "layers",
+                                             "suitable":  true,
+                                             "hint":  "큰 일교차에 대비해 옷을 겹쳐 입는 까닭을 생각해보세요."
+                                         },
+                                         {
+                                             "id":  "short",
+                                             "name":  "얇은 반팔 옷",
+                                             "icon":  "👕",
+                                             "color":  "#91c8c6",
+                                             "style":  "short",
+                                             "suitable":  false,
+                                             "hint":  "밤에 더 추워진다면 같은 얇은 옷만 입어도 괜찮을까요?"
+                                         }
+                                     ],
+                         "ingredients":  [
+                                             {
+                                                 "id":  "potato",
+                                                 "name":  "감자",
+                                                 "icon":  "🥔",
+                                                 "color":  "#b7956e",
+                                                 "x":  2,
+                                                 "y":  14
+                                             },
+                                             {
+                                                 "id":  "corn",
+                                                 "name":  "옥수수",
+                                                 "icon":  "🌽",
+                                                 "color":  "#dfc174",
+                                                 "x":  13,
+                                                 "y":  12
+                                             },
+                                             {
+                                                 "id":  "barley",
+                                                 "name":  "보리",
+                                                 "icon":  "🌾",
+                                                 "color":  "#c5af77",
+                                                 "x":  13,
+                                                 "y":  15
+                                             }
+                                         ],
+                         "foodTip":  "안데스 일부 지역에서 재배하는 감자를 모아 음식을 만들어보세요.",
+                         "recipes":  [
+                                         {
+                                             "id":  "potatoplate",
+                                             "name":  "감자와 옥수수 음식",
+                                             "icon":  "🥔",
+                                             "needs":  [
+                                                           "potato",
+                                                           "corn"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "서늘한 환경에 맞게 재배하는 감자를 음식으로 이용했네요."
+                                         },
+                                         {
+                                             "id":  "potatobarley",
+                                             "name":  "감자와 보리 한 그릇",
+                                             "icon":  "🥣",
+                                             "needs":  [
+                                                           "potato",
+                                                           "barley"
+                                                       ],
+                                             "suitable":  true,
+                                             "hint":  "지역에서 기르는 식재료와 날씨를 이유 카드에서 연결해보세요."
+                                         }
+                                     ],
+                         "facts":  [
+                                       "높은 곳은 기온이 낮아요.",
+                                       "낮과 밤의 기온 차가 큰 곳도 있어요."
+                                   ],
+                         "questions":  [
+                                           {
+                                               "id":  "house",
+                                               "title":  "추위와 바람에 대비해 왜 벽을 두껍게 하고 창을 작게 만들까요?",
+                                               "options":  [
+                                                               "비가 많이 올 때 집 아래로 물을 흐르게 하려고",
+                                                               "밤의 추위와 바람을 막고 집 안의 열이 빠져나가는 것을 줄이려고",
+                                                               "더운 공기를 집 밖으로 최대한 빠르게 내보내려고",
+                                                               "모래땅에 올리브를 심을 공간을 만들려고",
+                                                               "벽을 얇게 만들어 차가운 바람이 잘 통하게 하려고"
+                                                           ],
+                                               "answer":  1,
+                                               "hint":  "높은 곳의 밤에는 날씨가 어떨까요? 집 안의 따뜻함을 지키는 방법을 떠올려보세요.",
+                                               "explanation":  "두꺼운 벽과 작은 창은 추위와 바람에 대비하고 실내의 열을 지키는 데 도움을 줄 수 있어요."
+                                           },
+                                           {
+                                               "id":  "clothes",
+                                               "title":  "낮과 밤의 기온 차에 대비해 왜 옷을 여러 겹 입을까요?",
+                                               "options":  [
+                                                               "낮에도 밤에도 옷 안으로 찬바람이 들어오게 하려고",
+                                                               "겹쳐 입으면 몸 주변의 산소가 늘어나서",
+                                                               "밝은색 옷이 필요 없도록 햇빛을 모두 흡수하려고",
+                                                               "추울 때 보온하고 기온에 따라 옷을 더 입거나 벗으려고",
+                                                               "옷을 겹치면 하루 동안 날씨가 변하지 않아서"
+                                                           ],
+                                               "answer":  3,
+                                               "hint":  "낮에는 덜 춥고 밤에는 더 추워진다면 같은 두께의 옷만 입는 것보다 어떤 방법이 편할까요?",
+                                               "explanation":  "여러 겹의 옷은 보온에 도움을 주고, 기온이 달라질 때 더 입거나 벗으며 조절할 수 있어요."
+                                           },
+                                           {
+                                               "id":  "food",
+                                               "title":  "안데스의 일부 고산 지역에서는 왜 감자를 이용한 음식을 먹을까요?",
+                                               "options":  [
+                                                               "감자가 바닷물에서만 자라는 작물이어서",
+                                                               "감자가 더운 저지대에서만 수확되는 작물이어서",
+                                                               "지역의 서늘한 환경에 맞게 재배하는 감자를 식재료로 이용해서",
+                                                               "높은 산에서는 모든 종류의 작물이 물 없이 자라서",
+                                                               "감자를 먹으면 높은 곳의 공기 속 산소가 많아져서"
+                                                           ],
+                                               "answer":  2,
+                                               "hint":  "모든 작물이 같은 날씨에서 잘 자랄까요? 지역에서 재배하는 감자와 서늘한 환경을 연결해보세요.",
+                                               "explanation":  "안데스의 일부 고산 지역에서는 환경에 맞는 감자를 재배해 음식으로 이용해요."
+                                           }
+                                       ]
+                     }
+                 ],
+    "revision":  3
+}</script>
+<script>
+(() => {
+  'use strict';
+  // 인터넷과 외부 파일 접근 없이 실행하도록 배포본에 기본 자료를 포함합니다.
+  // 교사는 climate-data.json만 수정한 뒤 자료 불러오기를 사용하면 됩니다.
+  const $ = id => document.getElementById(id);
+  const STORAGE_KEY='climate-block-world-v1', DATA_KEY='climate-block-data-v1', GUIDE_KEY='climate-block-guide-3d-v1';
+  const BANK_KEY='climate-block-worlds-v1';
+  const worlds=Object.create(null);
+  const W=800, HEIGHT=16;
+  const world=$('world'),ctx=world.getContext('2d');
+  const missions=[['facts','기후 특징 확인'],['house','집 짓기'],['clothes','옷 입히기'],['food','음식 만들기'],['reason','이유 고르기']];
+  let data,climate,model,tab='facts',mode='place',materialId='',factIndex=0,questionIndex=0;
+  let saveTimer,imageBlob,storageAvailable=true,storageNoticeShown=false;
+  let keyboardCell={x:7,y:12},showCursor=false;
+  let buildLayer=0,viewMode=false,hitFaces=[],sceneProjection=null;
+  const camera={yaw:Math.PI/4,elevation:0.58,zoom:1};
+  const pointers=new Map();let gesture=null;
+  const voxelIndex=(x,z,h)=>(h*16+z)*16+x;
+  const inBounds=(x,z,h)=>x>=0&&x<16&&z>=0&&z<16&&h>=0&&h<HEIGHT;
+  function occupiedBlocks(){const blocks=[];model.voxels.forEach((id,index)=>{if(id)blocks.push({id,x:index%16,z:Math.floor(index/16)%16,h:Math.floor(index/256)});});return blocks;}
+  const text=(tag,content,className)=>{const n=document.createElement(tag);n.textContent=content;if(className)n.className=className;return n;};
+  function button(label,action,className=''){const b=text('button',label,className);b.type='button';b.addEventListener('click',action);return b;}
+  function notice(message){$('notice').hidden=false;$('notice').textContent=message;}
+  function feedback(message,hint=false){$('feedback').textContent=message;$('feedback').classList.toggle('hint',hint);}
+  function readStorage(key){try{return localStorage.getItem(key);}catch{storageAvailable=false;return null;}}
+  function writeStorage(key,value){try{localStorage.setItem(key,value);return true;}catch{storageAvailable=false;return false;}}
+  function saveNow(){
+    if(!model)return;clearTimeout(saveTimer);
+    worlds[model.climateId]=model;
+    if(writeStorage(BANK_KEY,JSON.stringify({version:1,lastClimateId:model.climateId,worlds}))){writeStorage(STORAGE_KEY,JSON.stringify(model));$('saveStatus').textContent='✓ 기후별 마을을 이 기기에 자동 저장했어요';}
+    else{ $('saveStatus').textContent='자동 저장을 사용할 수 없어요';if(!storageNoticeShown){notice('이 브라우저에서는 자동 저장이 안 돼요. 창을 닫기 전에 마을 이미지를 저장해주세요.');storageNoticeShown=true;}}
+  }
+  function scheduleSave(){clearTimeout(saveTimer);saveTimer=setTimeout(saveNow,150);}
+  // 자료 전체를 검증한 뒤 적용하므로 잘못된 파일을 열어도 기존 자료가 유지됩니다.
+  function validateData(value){
+    const str=v=>typeof v==='string'&&v.length>0&&v.length<2000;
+    const list=(v,min=1,max=32)=>Array.isArray(v)&&v.length>=min&&v.length<=max;
+    const id=v=>str(v)&&/^[a-zA-Z0-9_-]+$/.test(v);
+    const unique=v=>v.every(i=>i&&typeof i==='object')&&new Set(v.map(i=>i.id)).size===v.length;
+    const color=v=>typeof v==='string'&&/^#[0-9a-f]{6}$/i.test(v);
+    if(!value||value.version!==1||!list(value.climates,1,6)||!unique(value.climates))throw Error('기후 목록과 version: 1을 확인해주세요.');
+    for(const c of value.climates){
+      if(!id(c.id)||!str(c.name)||!str(c.icon)||!str(c.subtitle)||!list(c.facts,1,10)||!c.facts.every(str)||!color(c.sky)||!color(c.ground)||!color(c.accent)||!str(c.houseTip)||!str(c.foodTip))throw Error('기후 이름·특징·색상·안내를 확인해주세요.');
+      if(!['dry','tropical','temperate','continental','polar','highland'].includes(c.id))throw Error('기후 id를 확인해주세요.');
+      if(!c.houseRule||!Number.isInteger(c.houseRule.minBlocks)||c.houseRule.minBlocks<1||c.houseRule.minBlocks>256||typeof c.houseRule.requireDoor!=='boolean'||typeof c.houseRule.requireRoof!=='boolean')throw Error('집 미션 기준을 확인해주세요.');
+      if(!list(c.materials)||!unique(c.materials)||!c.materials.every(m=>id(m.id)&&str(m.name)&&color(m.color)&&['brick','roof','roofSlope','door','window','ice','wood','stone','post','floor','grass','snow'].includes(m.type)&&typeof m.suitable==='boolean'&&str(m.hint)))throw Error('재료 목록을 확인해주세요.');
+      if((c.houseRule.requireDoor&&!c.materials.some(m=>m.type==='door'))||(c.houseRule.requireRoof&&!c.materials.some(m=>['roof','roofSlope'].includes(m.type))))throw Error('미션에 필요한 문·지붕 재료가 없습니다.');
+      if(c.houseRule.requireRaised!==undefined&&typeof c.houseRule.requireRaised!=='boolean')throw Error('높인 바닥 기준은 true 또는 false로 입력해주세요.');
+      if(c.houseRule.requireRaised&&(!c.materials.some(m=>m.type==='post')||!c.materials.some(m=>m.type==='floor')))throw Error('높인 집에 필요한 기둥·바닥 재료가 없습니다.');
+      if(c.biome!==undefined&&!['dry','tropical','temperate','continental','polar','highland'].includes(c.biome))throw Error('월드 풍경 종류를 확인해주세요.');
+      if(!list(c.clothes)||!unique(c.clothes)||!c.clothes.every(o=>id(o.id)&&str(o.name)&&str(o.icon)&&color(o.color)&&['long','short','fur','layers','poncho'].includes(o.style)&&typeof o.suitable==='boolean'&&str(o.hint)))throw Error('옷 목록을 확인해주세요.');
+      if(!list(c.ingredients,1,20)||!unique(c.ingredients)||!c.ingredients.every(i=>id(i.id)&&str(i.name)&&str(i.icon)&&color(i.color)&&Number.isInteger(i.x)&&Number.isInteger(i.y)&&i.x>=0&&i.x<16&&i.y>=0&&i.y<16))throw Error('식재료와 위치를 확인해주세요.');
+      if(new Set(c.ingredients.map(i=>`${i.x},${i.y}`)).size!==c.ingredients.length)throw Error('식재료 위치가 겹치지 않도록 해주세요.');
+      if(!list(c.recipes)||!unique(c.recipes)||!c.recipes.every(r=>id(r.id)&&str(r.name)&&str(r.icon)&&list(r.needs,1,20)&&new Set(r.needs).size===r.needs.length&&r.needs.every(n=>c.ingredients.some(i=>i.id===n))&&typeof r.suitable==='boolean'&&str(r.hint)))throw Error('음식과 필요한 재료를 확인해주세요.');
+      if(!list(c.questions,3,3)||!unique(c.questions)||!c.questions.every(q=>id(q.id)&&str(q.title)&&list(q.options,5,5)&&q.options.every(str)&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<5&&str(q.hint)&&str(q.explanation)))throw Error('이유 카드는 3장, 각 보기 5개와 answer 0~4를 확인해주세요.');
+    }return value;
+  }
+  function fresh(c){return{version:2,climateId:c.id,voxels:Array(4096).fill(null),facts:false,clothing:null,collected:[],food:null,answers:{},created:Date.now()};}
+  function restore(candidate,c){
+    if(!candidate||candidate.climateId!==c.id)return fresh(c);
+    const m=fresh(c),valid=id=>c.materials.some(b=>b.id===id)?id:null;
+    if(candidate.version===2&&Array.isArray(candidate.voxels)&&candidate.voxels.length===4096)m.voxels=candidate.voxels.map(valid);
+    else if(candidate.version===1&&Array.isArray(candidate.cells)&&candidate.cells.length===256){
+      // 이전 2D 집을 중앙의 세로 벽으로 옮겨 재료와 집 모양을 보존합니다.
+      candidate.cells.forEach((id,index)=>{m.voxels[voxelIndex(index%16,7,15-Math.floor(index/16))]=valid(id);});
+    }else return m;
+    m.facts=candidate.facts===true;
+    m.clothing=c.clothes.some(o=>o.id===candidate.clothing)?candidate.clothing:null;
+    m.collected=c.ingredients.filter(i=>Array.isArray(candidate.collected)&&candidate.collected.includes(i.id)).map(i=>i.id);
+    const food=c.recipes.find(r=>r.id===candidate.food);m.food=food&&food.needs.every(n=>m.collected.includes(n))?food.id:null;
+    for(const q of c.questions){const answer=candidate.answers&&Object.prototype.hasOwnProperty.call(candidate.answers,q.id)?candidate.answers[q.id]:undefined;if(Number.isInteger(answer)&&answer>=0&&answer<5)m.answers[q.id]=answer;}
+    m.created=Number.isFinite(candidate.created)?candidate.created:Date.now();return m;
+  }
+  function getMaterial(id){return climate.materials.find(m=>m.id===id);}
+  // 서로 붙어 있는 블록을 묶어 집의 최소 기준만 확인합니다. 틀린 재료도 막지 않습니다.
+  function houseComplete(){
+    const visited=new Set();
+    for(let start=0;start<4096;start++){
+      if(!model.voxels[start]||visited.has(start))continue;
+      const queue=[start],types=new Set();let count=0,raisedFloor=false,groundPost=false;visited.add(start);
+      while(queue.length){
+        const index=queue.pop(),x=index%16,z=Math.floor(index/16)%16,h=Math.floor(index/256),type=getMaterial(model.voxels[index]).type;count++;types.add(type);if(type==='floor'&&h>=1)raisedFloor=true;if(type==='post'&&h===0)groundPost=true;
+        for(const[nx,nz,nh]of[[x-1,z,h],[x+1,z,h],[x,z-1,h],[x,z+1,h],[x,z,h-1],[x,z,h+1]]){const n=voxelIndex(nx,nz,nh);if(inBounds(nx,nz,nh)&&model.voxels[n]&&!visited.has(n)){visited.add(n);queue.push(n);}}
+      }
+      if(count>=climate.houseRule.minBlocks&&(!climate.houseRule.requireDoor||types.has('door'))&&(!climate.houseRule.requireRoof||types.has('roof')||types.has('roofSlope'))&&(!climate.houseRule.requireRaised||(raisedFloor&&groundPost)))return true;
+    }return false;
+  }
+  function completion(){return{facts:model.facts,house:houseComplete(),clothes:Boolean(model.clothing),food:Boolean(model.food),reason:climate.questions.every(q=>Number.isInteger(model.answers[q.id]))};}
+  function refresh(){
+    const done=completion();let count=0;$('missionList').replaceChildren();
+    missions.forEach(([id,label],i)=>{if(done[id])count++;const b=button('',()=>setTab(id),`mission${done[id]?' done':''}`);b.append(text('span',done[id]?'✓':String(i+1),'step'),text('span',label));b.setAttribute('aria-label',`${label}: ${done[id]?'완료':'진행 중'}`);$('missionList').append(b);});
+    $('progressText').textContent=`${count} / 5개 미션 완료`;$('progress').value=count;$('blockCount').textContent=`블록 ${occupiedBlocks().length}개`;
+    $('exportButton').disabled=count<5;$('saveHelp').textContent=count===5?'마을과 선택한 이유를 이미지로 남겨 발표해보세요.':`미션 ${5-count}개를 더 마치면 이미지를 저장할 수 있어요.`;
+    document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tab===tab)));drawWorld();scheduleSave();
+  }
+  function renderHome(){
+    $('climateCards').replaceChildren();
+    const names=[['dry','건조','☀️'],['tropical','열대','🌿'],['temperate','온대','🌤️'],['continental','냉대','🌲'],['polar','한대','❄️'],['highland','고산','⛰️']];
+    for(const[id,name,icon]of names){const c=data.climates.find(c=>c.id===id),b=button('',()=>openClimate(c),`climate-card${c?' active':''}`);b.disabled=!c;if(c){b.style.background=shade(c.ground,1.22);b.style.borderColor=c.accent;}
+      b.append(text('span',c?c.icon:icon,'icon'),text('strong',c?c.name:`${name} 기후`),text('span',c?(worlds[c.id]||(model&&model.climateId===c.id)?'내 마을 이어하기 →':'마을 만들기 →'):'자료가 준비되지 않았어요','muted'),text('span','','pixel'));
+      if(c){b.querySelector('.pixel').style.background=c.accent;b.querySelector('.muted').style.color='#304637';} $('climateCards').append(b);}
+  }
+  function openClimate(c){
+    if(!c)return;
+    if(model&&model.climateId!==c.id)saveNow();
+    const existing=model&&model.climateId===c.id?model:worlds[c.id];
+    climate=c;model=existing?restore(existing,c):fresh(c);worlds[c.id]=model;
+    factIndex=0;questionIndex=0;buildLayer=0;mode='place';keyboardCell={x:7,y:12};camera.yaw=Math.PI/4;camera.elevation=.58;camera.zoom=1;
+    materialId=c.materials[0].id;document.documentElement.style.setProperty('--accent',c.accent);
+    $('home').hidden=true;$('game').hidden=false;$('worldTitle').textContent=`${c.icon} ${c.name}`;$('worldSubtitle').textContent=c.subtitle;
+    setTab(model.facts?'house':'facts');if(readStorage(GUIDE_KEY)!=='seen')$('guide').showModal();
+  }
+  function setTab(next){
+    tab=next;showCursor=false;viewMode=false;pointers.clear();gesture=null;
+    $('panelTitle').textContent={facts:'기후 알아보기',house:'나만의 집 짓기',clothes:'오늘의 옷 고르기',food:'지역 음식 만들기',reason:'왜 이렇게 했나요?'}[tab];
+    updateToolCaption();
+    renderActivity();refresh();
+    feedback(tab==='house'?climate.houseTip:tab==='food'?climate.foodTip:tab==='reason'?'내 선택과 날씨를 연결해보세요. 다른 보기를 골라도 계속할 수 있어요.':tab==='clothes'?'캐릭터에게 옷을 입혀보세요. 이곳의 날씨도 생각해보세요.':'기후의 특징을 한 문장씩 살펴보세요.');
+  }
+  function renderActivity(){
+    const host=$('activity');host.replaceChildren();
+    if(tab==='facts'){
+      host.append(text('p',`${factIndex+1} / ${climate.facts.length}`,'small muted'),text('div',climate.facts[factIndex],'fact'));
+      host.append(button(factIndex<climate.facts.length-1?'다음 특징 보기 →':'확인했어요 · 집 짓기 →',()=>{if(factIndex<climate.facts.length-1){factIndex++;renderActivity();}else{model.facts=true;setTab('house');}},'primary full'));return;
+    }
+    if(tab==='house'){
+      const tools=text('div','','tools');
+      for(const[id,label]of[['place','＋ 쌓기'],['erase','− 부수기']]){const b=button(label,()=>{mode=id;viewMode=false;renderActivity();updateToolCaption();});b.setAttribute('aria-pressed',String(mode===id));tools.append(b);}host.append(tools);
+      const choices=text('div','','choices');
+      for(const m of climate.materials){const b=button('',()=>{materialId=m.id;mode='place';viewMode=false;renderActivity();updateToolCaption();feedback(m.hint,!m.suitable);},'choice');b.setAttribute('aria-pressed',String(materialId===m.id&&mode==='place'));const swatch=text('span','','swatch');swatch.style.background=m.color;b.append(swatch,text('span',m.name));choices.append(b);}host.append(choices);
+      const layer=text('div','','layer-control'),down=button('−',()=>{buildLayer=Math.max(0,buildLayer-1);renderActivity();drawWorld();}),up=button('＋',()=>{buildLayer=Math.min(15,buildLayer+1);renderActivity();drawWorld();});down.setAttribute('aria-label','쌓는 높이 낮추기');up.setAttribute('aria-label','쌓는 높이 높이기');down.disabled=buildLayer===0;up.disabled=buildLayer===15;layer.append(down,text('span',`빈 땅에 놓는 높이: ${buildLayer+1}층`),up);host.append(layer);
+      const r=climate.houseRule;host.append(text('p',`미션: 연결된 블록 ${r.minBlocks}개 이상${r.requireDoor?' + 문':''}${r.requireRoof?' + 지붕':''}${r.requireRaised?' + 땅의 기둥 + 2층 이상 높인 바닥':''}`,'feedback small'),text('p','윗면을 누르면 위로, 옆면을 누르면 옆으로 쌓여요. 시점을 돌려 뒤쪽도 만들어보세요.','small muted'));
+    }
+    if(tab==='clothes'){
+      const preview=text('div','','avatar-preview'),c=document.createElement('canvas');c.id='avatar';c.width=150;c.height=180;preview.append(c);host.append(preview);
+      for(const outfit of climate.clothes){const b=button(`${outfit.icon} ${outfit.name}`,()=>{model.clothing=outfit.id;renderActivity();refresh();feedback(outfit.hint,!outfit.suitable);},'full');b.style.marginBottom='8px';b.setAttribute('aria-pressed',String(model.clothing===outfit.id));host.append(b);}drawAvatar(c.getContext('2d'),75,140,1.5);
+    }
+    if(tab==='food'){
+      host.append(text('p','월드의 식재료 그림을 눌러 수확해요.','small muted'));
+      for(const i of climate.ingredients){const row=text('div','','item-row');row.append(text('span',`${i.icon} ${i.name}`),text('span',model.collected.includes(i.id)?'✓ 모았어요':'월드에서 찾기','small muted'));host.append(row);}
+      for(const r of climate.recipes){const ready=r.needs.every(id=>model.collected.includes(id)),b=button(`${r.icon} ${r.name}`,()=>cook(r.id),'recipe');b.append(text('span',`${r.needs.map(id=>climate.ingredients.find(i=>i.id===id).name).join(' + ')} · ${model.food===r.id?'✓ 만들었어요':ready?'만들기':'재료를 모아주세요'}`));host.append(b);}
+    }
+    if(tab==='reason'){
+      const q=climate.questions[questionIndex];host.append(text('p',`${questionIndex+1} / ${climate.questions.length} · ${['집','옷','음식'][questionIndex]}의 이유`,'small muted'),text('h3',q.title));
+      q.options.forEach((option,index)=>{const b=button('',()=>{model.answers[q.id]=index;renderActivity();refresh();feedback(index===q.answer?q.explanation:q.hint,index!==q.answer);},'answer');b.append(text('span',String(index+1)),text('span',option));b.setAttribute('aria-pressed',String(model.answers[q.id]===index));host.append(b);});
+      const nav=text('div','','question-nav'),prev=button('← 이전',()=>{questionIndex--;renderActivity();}),next=button('다음 →',()=>{questionIndex++;renderActivity();});prev.disabled=questionIndex===0;next.disabled=questionIndex===climate.questions.length-1;nav.append(prev,next);host.append(nav);
+      if(Number.isInteger(model.answers[q.id]))host.append(text('p',model.answers[q.id]===q.answer?q.explanation:q.hint,'feedback small'));
+    }
+  }
+  function cook(id){
+    const r=climate.recipes.find(r=>r.id===id),missing=r.needs.filter(n=>!model.collected.includes(n));
+    if(missing.length){feedback(`먼저 ${missing.map(n=>climate.ingredients.find(i=>i.id===n).name).join(', ')}을 월드에서 모아주세요.`,true);return false;}
+    model.food=id;renderActivity();refresh();feedback(r.hint,!r.suitable);return true;
+  }
+  function updateToolCaption(){
+    $('toolCaption').textContent=viewMode?'끌어서 회전 · 두 손가락으로 확대':tab==='food'?'식재료 표시를 눌러 모아요':mode==='erase'?'지울 블록을 눌러요':'땅이나 블록 면을 눌러 쌓아요';
+    $('cameraMode').setAttribute('aria-pressed',String(viewMode));$('cameraMode').textContent=viewMode?'🧱 블록 편집으로 전환':'↔ 둘러보기로 전환';world.style.cursor=viewMode?'grab':'crosshair';
+  }
+  function pointInside(p,polygon){let inside=false;for(let i=0,j=polygon.length-1;i<polygon.length;j=i++){const a=polygon[i],b=polygon[j];if((a.y>p.y)!==(b.y>p.y)&&p.x<(b.x-a.x)*(p.y-a.y)/(b.y-a.y)+a.x)inside=!inside;}return inside;}
+  // 화면에서 가장 앞에 그린 면부터 검사하므로 가려진 블록을 잘못 고르지 않습니다.
+  function pickPoint(p){for(let i=hitFaces.length-1;i>=0;i--){const f=hitFaces[i];if(pointInside(p,f.points))return f.hit;}return null;}
+  function pointerCell(e){const b=world.getBoundingClientRect();return pickPoint({x:(e.clientX-b.left)*W/b.width,y:(e.clientY-b.top)*W/b.height});}
+  function editHit(hit){
+    if(!hit)return;
+    if(tab==='food'){
+      const i=climate.ingredients.find(i=>i.id===hit.ingredient||(hit.kind==='ground'&&i.x===hit.x&&i.y===hit.z));
+      if(i&&!model.collected.includes(i.id)){model.collected.push(i.id);renderActivity();refresh();feedback(`${i.name}을 모았어요! 음식 만들기 버튼을 눌러보세요.`);}else feedback(i?'이미 모은 재료예요. 음식을 만들어보세요.':'식재료 표시를 눌러보세요.');return;
+    }
+    if(hit.kind==='ingredient'){feedback('음식 탭에서 식재료를 모을 수 있어요.');return;}
+    if(mode==='erase'){if(hit.kind==='voxel')editCell(hit.x,hit.z,hit.h);return;}
+    const n=hit.kind==='voxel'?hit.normal:[0,0,0];
+    editCell(hit.x+n[0],hit.z+n[1],hit.kind==='voxel'?hit.h+n[2]:buildLayer);
+  }
+  function editCell(x,z,h=buildLayer){
+    if(!inBounds(x,z,h)){feedback('이 월드는 가로·세로 16칸, 높이 16층까지 만들 수 있어요.');return;}
+    if(tab!=='house'){feedback('블록을 쌓으려면 집 탭을, 재료를 모으려면 음식 탭을 선택하세요.');return;}
+    const index=voxelIndex(x,z,h);if(mode==='place'&&model.voxels[index]){feedback('이미 블록이 있어요. 다른 면을 누르거나 먼저 부숴보세요.');return;}
+    const before=houseComplete();model.voxels[index]=mode==='erase'?null:materialId;refresh();
+    if(mode==='erase')feedback('블록을 지웠어요. 다시 쌓아도 괜찮아요.');
+    else{const m=getMaterial(materialId);feedback(m.hint,!m.suitable);if(m.suitable&&!before&&houseComplete())feedback('집 짓기 미션을 마쳤어요! 어떤 날씨에 대비했는지 생각해보세요.');}
+  }
+  function rect(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h));}
+  function drawAvatar(c,x,y,scale){
+    const o=climate.clothes.find(o=>o.id===model.clothing),color=o?o.color:'#89a397';c.save();c.translate(x,y);c.scale(scale,scale);
+    rect(c,-15,-88,30,26,'#7a4e34');rect(c,-12,-78,24,24,'#e5b78b');rect(c,-7,-69,3,3,'#3f3930');rect(c,5,-69,3,3,'#3f3930');
+    rect(c,-17,-52,34,o&&o.style!=='short'?46:30,color);rect(c,-25,-48,8,32,color);rect(c,17,-48,8,32,color);
+    if(o&&o.style==='short'){rect(c,-25,-34,8,17,'#e5b78b');rect(c,17,-34,8,17,'#e5b78b');}
+    rect(c,-13,-7,10,15,'#555c51');rect(c,3,-7,10,15,'#555c51');rect(c,-15,5,13,5,'#564536');rect(c,2,5,13,5,'#564536');
+    if(o&&o.style==='long'){rect(c,-18,-86,36,8,'#f6f0db');rect(c,12,-80,8,34,'#f6f0db');}
+    if(o&&o.style==='fur'){rect(c,-18,-53,36,8,'#d4b993');rect(c,-4,-46,8,40,'#d4b993');}c.restore();
+    if(o&&['layers','poncho'].includes(o.style)){c.save();c.translate(x,y);c.scale(scale,scale);rect(c,-20,-51,40,34,o.color);rect(c,-19,-42,38,4,'#ecd6a6');rect(c,-19,-29,38,4,'#ecd6a6');if(o.style==='layers')rect(c,-4,-54,8,34,'#deb68f');c.restore();}
+  }
+  // x·z는 땅의 위치, h는 높이입니다. 실제 3차원 좌표를 카메라 각도로 회전해 화면에 투영합니다.
+  function shade(hex,factor){return '#'+[1,3,5].map(i=>Math.min(255,Math.round(parseInt(hex.slice(i,i+2),16)*factor)).toString(16).padStart(2,'0')).join('');}
+  function makeProjection(){
+    const sy=Math.sin(camera.yaw),cy=Math.cos(camera.yaw),se=Math.sin(camera.elevation),ce=Math.cos(camera.elevation);
+    const raw=(x,z,h)=>{const dx=x-8,dz=z-8,a=dx*cy-dz*sy,b=dx*sy+dz*cy;return{x:a,y:b*se-h*ce,depth:b*ce+h*se};};
+    const blocks=occupiedBlocks(),maxH=Math.max(3,...blocks.map(b=>b.h+1));
+    const corners=[];for(const x of[0,16])for(const z of[0,16])for(const h of[-.6,maxH])corners.push(raw(x,z,h));
+    const minX=Math.min(...corners.map(p=>p.x)),maxX=Math.max(...corners.map(p=>p.x)),minY=Math.min(...corners.map(p=>p.y)),maxY=Math.max(...corners.map(p=>p.y));
+    const scale=Math.min(670/(maxX-minX),630/(maxY-minY))*camera.zoom;
+    const ox=400-(minX+maxX)*scale/2,oy=440-(minY+maxY)*scale/2;
+    return{sy,cy,se,ce,scale,point:(x,z,h)=>{const p=raw(x,z,h);return{x:ox+p.x*scale,y:oy+p.y*scale,depth:p.depth};}};
+  }
+  function drawWorld(target=ctx){
+    if(!climate||!model)return;
+    const projection=makeProjection(),project=projection.point,faces=[];
+    if(target===ctx){sceneProjection=projection;hitFaces=[];}
+    target.clearRect(0,0,W,W);
+    const biome=climate.biome||'dry';
+    const sky=target.createLinearGradient(0,0,0,800);sky.addColorStop(0,shade(climate.sky,1.06));sky.addColorStop(1,climate.sky);target.fillStyle=sky;target.fillRect(0,0,W,W);
+    if(['dry','temperate','highland'].includes(biome)){rect(target,660,50,50,50,'#f4cf83');rect(target,649,65,72,20,'#f4cf83');}
+    else{for(const cx of[480,640]){rect(target,cx,55,92,24,'#f7fbf8');rect(target,cx+18,38,50,28,'#f7fbf8');}}
+    if(biome==='tropical'){target.strokeStyle='#7baba280';target.lineWidth=2;for(let i=0;i<22;i++){const x=90+(i*67)%640,y=90+(i*31)%160;target.beginPath();target.moveTo(x,y);target.lineTo(x-5,y+16);target.stroke();}}
+    if(['continental','polar'].includes(biome)){target.fillStyle='#ffffffbd';for(let i=0;i<32;i++)target.fillRect(35+(i*83)%730,100+(i*47)%250,3,3);}
+    target.fillStyle='#b1905330';target.beginPath();target.ellipse(400,685,280,42,0,0,Math.PI*2);target.fill();
+    const polygon=(points,color,hit=null,material=null)=>{const screen=points.map(p=>project(...p));faces.push({points:screen,depth:screen.reduce((n,p)=>n+p.depth,0)/screen.length,color,hit,material});};
+    function box(x,z,h,sx,sz,sh,color,hit=null,material=null){
+      const topAt=px=>h+sh*(material&&material.type==='roofSlope'&&px===x ? .25 : 1);
+      // 붙어 있는 블록 사이의 안쪽 면을 생략해 태블릿에서 그리는 양을 줄입니다.
+      const exposed=(dx,dz,dh)=>!hit||hit.kind!=='voxel'||!inBounds(x+dx,z+dz,h+dh)||!model.voxels[voxelIndex(x+dx,z+dz,h+dh)];
+      if(exposed(0,0,1))polygon([[x,z,topAt(x)],[x+sx,z,topAt(x+sx)],[x+sx,z+sz,topAt(x+sx)],[x,z+sz,topAt(x)]],shade(color,1.12),hit?{...hit,normal:[0,0,1]}:null);
+      if(projection.sy>=0){if(exposed(1,0,0))polygon([[x+sx,z,h],[x+sx,z+sz,h],[x+sx,z+sz,topAt(x+sx)],[x+sx,z,topAt(x+sx)]],shade(color,.87),hit?{...hit,normal:[1,0,0]}:null,material);}
+      else if(exposed(-1,0,0))polygon([[x,z+sz,h],[x,z,h],[x,z,topAt(x)],[x,z+sz,topAt(x)]],shade(color,.77),hit?{...hit,normal:[-1,0,0]}:null,material);
+      if(projection.cy>=0){if(exposed(0,1,0))polygon([[x+sx,z+sz,h],[x,z+sz,h],[x,z+sz,topAt(x)],[x+sx,z+sz,topAt(x+sx)]],shade(color,.73),hit?{...hit,normal:[0,1,0]}:null,material);}
+      else if(exposed(0,-1,0))polygon([[x,z,h],[x+sx,z,h],[x+sx,z,topAt(x+sx)],[x,z,topAt(x)]],shade(color,.92),hit?{...hit,normal:[0,-1,0]}:null,material);
+    }
+    box(0,0,-.65,16,16,.65,climate.ground);
+    for(let z=0;z<16;z++)for(let x=0;x<16;x++){
+      let tile=shade(climate.ground,(x+z)%2?1.05:1.1);
+      if(biome==='tropical'&&z<2)tile='#87b8b3';
+      if(biome==='temperate'&&z<2)tile='#85bfd2';
+      if(biome==='continental'&&(x+z)%5===0)tile='#e7eade';
+      if(biome==='polar')tile=z<2?'#a9cbdc':shade(climate.ground,(x+z)%2?1.08:1.12);
+      if(biome==='highland'&&(x*3+z)%6===0)tile='#b5b4a9';
+      polygon([[x,z,0],[x+1,z,0],[x+1,z+1,0],[x,z+1,0]],tile,{kind:'ground',x,z,h:0});
+    }
+    for(const b of occupiedBlocks()){
+      const m=getMaterial(b.id);box(b.x,b.z,b.h,1,1,1,m.color,{kind:'voxel',x:b.x,z:b.z,h:b.h},m);
+    }
+    // 선인장과 나무, 캐릭터도 여러 개의 작은 입체 상자로 그립니다.
+    function tree(x,z,leaf,pine=false){box(x+.45,z+.45,0,.3,.3,2.2,'#8f6d4a');box(x,z,1.8,1.2,1.2,.55,leaf);box(x+.15,z+.15,2.35,.9,.9,.4,leaf);if(pine)box(x+.35,z+.35,2.75,.5,.5,.55,leaf);}
+    if(biome==='dry'){box(.6,2,0,.35,.35,1.9,'#719469');box(.3,2,.9,.3,.35,.35,'#719469');box(.25,2,1.05,.25,.35,.65,'#719469');tree(14,1,'#81a75d');}
+    if(biome==='tropical'){for(const[x,z]of[[.2,3],[14,1],[.2,8],[14,5]])tree(x,z,'#4f925c');}
+    if(biome==='temperate'){tree(.3,3,'#88a46a');tree(14,1,'#86a16f');box(14,6,0,.8,.8,.5,'#ece8d5');}
+    if(biome==='continental'){for(const[x,z]of[[.3,2],[14,1],[.5,8]])tree(x,z,'#4e6e59',true);box(13.7,1,2.9,.6,.6,.15,'#e4e9e1');}
+    if(biome==='polar'){box(.4,3,0,1.6,1.5,.45,'#eaf0ed');box(14,1,0,1.2,1.2,1.4,'#c2dce5');box(14.25,1.2,1.4,.7,.7,.6,'#e8efed');}
+    if(biome==='highland'){box(-1.2,0,0,2.4,2.4,1.1,'#939788');box(-.8,.3,1.1,1.8,1.8,1.3,'#a5a796');box(-.4,.6,2.4,1,1,1.1,'#b8b9ac');box(-.2,.8,3.5,.6,.6,.5,'#edf0e7');box(14,1,0,1.5,1.5,1.3,'#a4a491');}
+    const outfit=climate.clothes.find(o=>o.id===model.clothing),cloth=outfit?outfit.color:'#82a6a1';
+    const ax=2,az=12.5;
+    box(ax-.3,az,0,.25,.4,.65,'#525b53');box(ax+.12,az,0,.25,.4,.65,'#525b53');
+    const covered=outfit&&['long','layers','poncho','fur'].includes(outfit.style);
+    box(ax-.4,az-.04,.6,.8,.45,covered?1.05:.8,cloth);
+    box(ax-.65,az,.7,.22,.35,.65,cloth);box(ax+.43,az,.7,.22,.35,.65,cloth);
+    box(ax-.28,az-.02,1.45,.56,.48,.58,'#e2b88d');box(ax-.3,az-.04,1.94,.6,.52,.16,covered?cloth:'#73543d');
+    if(outfit&&outfit.style==='poncho'){box(ax-.56,az-.1,.8,1.12,.6,.15,'#e9c787');box(ax-.56,az-.1,1.15,1.12,.6,.12,'#e9c787');}
+    if(outfit&&outfit.style==='layers')box(ax-.12,az-.12,1.1,.2,.08,.6,'#e3c29c');
+    // 만든 음식은 작은 상 위에 표시합니다.
+    if(model.food){const r=climate.recipes.find(r=>r.id===model.food),ingredient=climate.ingredients.find(i=>r.needs.includes(i.id));box(13,12.5,0,1.2,.8,.65,'#ac7850');box(13.2,12.7,.65,.7,.4,.2,ingredient.color);}
+    if(tab==='food')for(const i of climate.ingredients)if(!model.collected.includes(i.id)){
+      if(i.id==='date'){box(i.x+.4,i.y+.4,0,.2,.2,1.6,'#a57a50');box(i.x,i.y,1.4,1,1,.25,'#7d9d56');}
+      else if(['wheat','rye','barley','rice'].includes(i.id)){for(let k=0;k<3;k++)box(i.x+.15+k*.25,i.y+.3,0,.1,.1,.9,i.color);}
+      else box(i.x+.2,i.y+.2,0,.6,.6,.65,i.color);
+    }
+    faces.sort((a,b)=>a.depth-b.depth);
+    function trace(points){target.beginPath();points.forEach((p,i)=>i?target.lineTo(p.x,p.y):target.moveTo(p.x,p.y));target.closePath();}
+    function interpolate(p,u,v){return{x:p[0].x*(1-u)*(1-v)+p[1].x*u*(1-v)+p[2].x*u*v+p[3].x*(1-u)*v,y:p[0].y*(1-u)*(1-v)+p[1].y*u*(1-v)+p[2].y*u*v+p[3].y*(1-u)*v};}
+    function inset(p,u0,v0,u1,v1,color){const q=[interpolate(p,u0,v0),interpolate(p,u1,v0),interpolate(p,u1,v1),interpolate(p,u0,v1)];trace(q);target.fillStyle=color;target.fill();}
+    for(const face of faces){
+      trace(face.points);target.fillStyle=face.color;target.fill();target.strokeStyle=face.hit&&face.hit.kind==='ground'?'#8b6c4930':'#58432335';target.lineWidth=.7;target.stroke();
+      if(target===ctx&&face.hit)hitFaces.push(face);
+      const m=face.material;
+      if(m){
+        if(m.type==='brick'){inset(face.points,0,.49,1,.52,'#dfc6a66b');inset(face.points,.49,0,.52,.5,'#dfc6a66b');inset(face.points,.24,.5,.27,1,'#dfc6a66b');}
+        if(['wood','post','floor','grass'].includes(m.type)){for(const u of[.23,.48,.73])inset(face.points,u,0,u+.025,1,'#71512b55');}
+        if(['stone','snow'].includes(m.type)){inset(face.points,0,.48,1,.51,'#ffffff60');inset(face.points,.35,0,.38,.48,'#ffffff60');}
+        if(m.type==='window'){inset(face.points,.12,.12,.88,.88,'#745844');inset(face.points,.2,.2,.8,.8,'#bce4e1');inset(face.points,.46,.2,.53,.8,'#745844');inset(face.points,.2,.46,.8,.53,'#745844');}
+        if(m.type==='door'){inset(face.points,.12,.02,.88,.96,'#704b35');inset(face.points,.2,.15,.8,.85,'#8e6447');inset(face.points,.66,.4,.76,.49,'#e7c06e');}
+        if(['roof','roofSlope'].includes(m.type)){inset(face.points,0,.3,1,.34,'#72443166');inset(face.points,0,.68,1,.72,'#72443166');}
+        if(m.type==='ice')inset(face.points,.25,.25,.7,.3,'#ffffff90');
+      }
+    }
+    if(showCursor&&target===ctx){const x=keyboardCell.x,z=keyboardCell.y;trace([[x,z,buildLayer+.02],[x+1,z,buildLayer+.02],[x+1,z+1,buildLayer+.02],[x,z+1,buildLayer+.02]].map(p=>project(...p)));target.strokeStyle='#245a48';target.lineWidth=3;target.stroke();}
+    if(tab==='food'&&target===ctx)for(const i of climate.ingredients)if(!model.collected.includes(i.id)){
+      const p=project(i.x+.5,i.y+.5,1.5),size=25;
+      target.fillStyle='#fffdf2';target.beginPath();target.arc(p.x,p.y,size,0,Math.PI*2);target.fill();target.strokeStyle='#876936';target.lineWidth=2;target.stroke();
+      target.font='25px sans-serif';target.textAlign='center';target.fillText(i.icon,p.x,p.y+8);
+      hitFaces.push({points:[{x:p.x-size,y:p.y-size},{x:p.x+size,y:p.y-size},{x:p.x+size,y:p.y+size},{x:p.x-size,y:p.y+size}],hit:{kind:'ingredient',ingredient:i.id,x:i.x,z:i.y,h:0}});
+    }
+    target.textAlign='left';target.font='bold 21px "Malgun Gothic",sans-serif';target.fillStyle='#765b3f';target.fillText(climate.name+' · 입체 블록 마을',30,36);
+    target.font='16px "Malgun Gothic",sans-serif';target.fillText('16 × 16칸 · 최대 16층',30,63);
+  }
+  // 문장 길이에 따라 줄을 나누므로 발표 이미지에서 답변이 잘리지 않습니다.
+  function wrapped(c,content,x,y,width,lineHeight,draw=true){let line='',current=y;for(const char of content){if(c.measureText(line+char).width>width&&line){if(draw)c.fillText(line,x,current);current+=lineHeight;line='';}line+=char;}if(draw)c.fillText(line,x,current);return current+lineHeight;}
+  async function buildImage(){
+    if(!Object.values(completion()).every(Boolean))return;
+    const sheet=document.createElement('canvas');sheet.width=1100;
+    const chosen=[...new Set(occupiedBlocks().map(b=>b.id))].map(id=>getMaterial(id)),outfit=climate.clothes.find(o=>o.id===model.clothing),recipe=climate.recipes.find(r=>r.id===model.food);
+    function drawReport(c,draw){
+      c.fillStyle='#294d40';c.font='bold 36px "Malgun Gothic",sans-serif';let y=wrapped(c,climate.name+' · 우리 모둠의 의식주 마을',50,65,1000,46,draw);
+      c.font='21px "Malgun Gothic",sans-serif';c.fillStyle='#61705c';y=wrapped(c,climate.facts.join(' '),50,y+8,1000,30,draw);
+      if(draw){const scene=document.createElement('canvas');scene.width=800;scene.height=800;drawWorld(scene.getContext('2d'));c.drawImage(scene,150,y+12,800,800);}y+=850;
+      c.fillStyle='#294d40';c.font='bold 23px "Malgun Gothic",sans-serif';y=wrapped(c,'집 재료: '+chosen.map(m=>m.name).join(', '),50,y,1000,32,draw);y=wrapped(c,'옷: '+outfit.name+' · 음식: '+recipe.name,50,y+12,1000,32,draw);
+      if(chosen.some(m=>!m.suitable)||!outfit.suitable||!recipe.suitable){c.font='20px "Malgun Gothic",sans-serif';c.fillStyle='#9a632e';y=wrapped(c,'함께 생각하기: 내가 고른 재료와 옷은 이곳 날씨에 잘 맞을까요?',50,y+12,1000,30,draw);}
+      for(const q of climate.questions){const index=model.answers[q.id];c.fillStyle='#294d40';c.font='bold 23px "Malgun Gothic",sans-serif';y=wrapped(c,q.title,50,y+30,1000,32,draw);c.font='22px "Malgun Gothic",sans-serif';y=wrapped(c,'내가 고른 이유: '+q.options[index],50,y+8,1000,32,draw);c.fillStyle=index===q.answer?'#567254':'#9a632e';y=wrapped(c,(index===q.answer?'날씨와 연결했어요: ':'다시 생각할 단서: ')+(index===q.answer?q.explanation:q.hint),50,y+8,1000,32,draw);}
+      c.fillStyle='#627464';c.font='21px "Malgun Gothic",sans-serif';return wrapped(c,'발표해보세요: 이 기후에서는 ___ 때문에 ___한 집 / 옷 / 음식이 필요해요.',50,y+45,1000,32,draw)+45;
+    }
+    sheet.height=Math.ceil(drawReport(sheet.getContext('2d'),false));const c=sheet.getContext('2d');rect(c,0,0,sheet.width,sheet.height,'#fffdf5');drawReport(c,true);
+    const blob=await new Promise(resolve=>sheet.toBlob(resolve,'image/png'));if(!blob){notice('이미지를 만들지 못했어요. 다시 저장을 눌러주세요.');return;}
+    imageBlob=blob;if($('previewImage').src.startsWith('blob:'))URL.revokeObjectURL($('previewImage').src);$('previewImage').src=URL.createObjectURL(blob);
+    const file=new File([blob],'기후-마을.png',{type:'image/png'});let shareable=false;try{shareable=Boolean(navigator.canShare&&navigator.canShare({files:[file]}));}catch{}
+    $('shareImage').hidden=!shareable;$('imageDialog').showModal();saveNow();
+  }
+  function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
+  async function importData(file){
+    if(!file)return;if(file.size>1024*1024){$('dataStatus').textContent='학습 자료는 1MB 이하의 JSON 파일로 불러와주세요.';return;}
+    try{
+      const next=validateData(JSON.parse(await file.text()));if(model&&!next.climates.some(c=>c.id===model.climateId))throw Error('현재 마을의 기후를 지우지 않고 자료를 수정해주세요.');
+      data=next;const persisted=writeStorage(DATA_KEY,JSON.stringify(data));
+      for(const c of data.climates)if(worlds[c.id])worlds[c.id]=restore(worlds[c.id],c);
+      if(model){climate=data.climates.find(c=>c.id===model.climateId);model=restore(model,climate);materialId=climate.materials[0].id;factIndex=0;questionIndex=0;$('worldTitle').textContent=climate.icon+' '+climate.name;$('worldSubtitle').textContent=climate.subtitle;document.documentElement.style.setProperty('--accent',climate.accent);if(!$('game').hidden)setTab('facts');saveNow();}
+      renderHome();$('dataStatus').textContent=persisted?'학습 자료를 적용하고 이 브라우저에 저장했어요.':'자료를 적용했어요. 자동 저장이 안 되므로 다음 실행 때 다시 불러와주세요.';
+    }catch(error){$('dataStatus').textContent='기존 자료를 유지했어요. '+error.message;}$('importData').value='';
+  }
+  // 손가락을 뗄 때 편집하므로 두 손가락으로 시점을 조절할 때 블록이 놓이지 않습니다.
+  function gestureMetrics(){const p=[...pointers.values()];return{distance:Math.max(1,Math.hypot(p[1].x-p[0].x,p[1].y-p[0].y)),angle:Math.atan2(p[1].y-p[0].y,p[1].x-p[0].x)};}
+  world.addEventListener('pointerdown',e=>{
+    if(e.button!==0)return;showCursor=false;world.focus({preventScroll:true});world.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId,{x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,moved:false,cancelled:false});
+    if(pointers.size>=2){for(const p of pointers.values())p.cancelled=true;gesture={...gestureMetrics(),zoom:camera.zoom,yaw:camera.yaw};}
+  });
+  world.addEventListener('pointermove',e=>{
+    const p=pointers.get(e.pointerId);if(!p)return;const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+    if(Math.hypot(p.x-p.startX,p.y-p.startY)>6)p.moved=true;
+    if(pointers.size>=2&&gesture){const now=gestureMetrics();camera.zoom=Math.min(2.2,Math.max(.65,gesture.zoom*now.distance/gesture.distance));camera.yaw=gesture.yaw+now.angle-gesture.angle;drawWorld();}
+    else if(viewMode){camera.yaw+=dx*.009;camera.elevation=Math.min(1.15,Math.max(.25,camera.elevation+dy*.004));drawWorld();}
+  });
+  function endPointer(e,cancelled){const p=pointers.get(e.pointerId);if(!p)return;pointers.delete(e.pointerId);if(pointers.size<2)gesture=null;if(!cancelled&&!p.cancelled&&!p.moved&&!viewMode)editHit(pointerCell(e));}
+  world.addEventListener('pointerup',e=>endPointer(e,false));
+  world.addEventListener('pointercancel',e=>endPointer(e,true));world.addEventListener('lostpointercapture',e=>endPointer(e,true));
+  world.addEventListener('wheel',e=>{e.preventDefault();camera.zoom=Math.min(2.2,Math.max(.65,camera.zoom*Math.exp(-e.deltaY*.001)));drawWorld();},{passive:false});
+  world.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter',' '].includes(e.key))e.preventDefault();if(e.key==='ArrowLeft')keyboardCell.x=Math.max(0,keyboardCell.x-1);if(e.key==='ArrowRight')keyboardCell.x=Math.min(15,keyboardCell.x+1);if(e.key==='ArrowUp')keyboardCell.y=Math.max(0,keyboardCell.y-1);if(e.key==='ArrowDown')keyboardCell.y=Math.min(15,keyboardCell.y+1);if(e.key==='Enter'||e.key===' ')editCell(keyboardCell.x,keyboardCell.y);showCursor=true;drawWorld();});
+  document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+  $('homeButton').addEventListener('click',()=>{saveNow();$('home').hidden=false;$('game').hidden=true;renderHome();});
+  $('cameraMode').addEventListener('click',()=>{viewMode=!viewMode;pointers.clear();gesture=null;updateToolCaption();});
+  $('panLeft').addEventListener('click',()=>{camera.yaw-=Math.PI/6;drawWorld();});$('panRight').addEventListener('click',()=>{camera.yaw+=Math.PI/6;drawWorld();});
+  $('zoomIn').addEventListener('click',()=>{camera.zoom=Math.min(2.2,camera.zoom+.15);drawWorld();});$('zoomOut').addEventListener('click',()=>{camera.zoom=Math.max(.65,camera.zoom-.15);drawWorld();});
+  $('cameraReset').addEventListener('click',()=>{camera.yaw=Math.PI/4;camera.elevation=.58;camera.zoom=1;drawWorld();});
+  $('guideButton').addEventListener('click',()=>$('guide').showModal());$('closeGuide').addEventListener('click',()=>{$('guide').close();writeStorage(GUIDE_KEY,'seen');});
+  $('exportButton').addEventListener('click',()=>buildImage().catch(()=>notice('이미지 저장을 완료하지 못했어요. 다시 눌러주세요.')));
+  $('downloadImage').addEventListener('click',()=>{if(imageBlob)download(imageBlob,`${climate.name}-의식주-마을.png`);});
+  $('shareImage').addEventListener('click',async()=>{try{await navigator.share({files:[new File([imageBlob],`${climate.name}-마을.png`,{type:'image/png'})]});}catch(error){if(error.name!=='AbortError')notice('공유 대신 이미지 내려받기 또는 길게 눌러 저장을 이용해주세요.');}});
+  $('closeImage').addEventListener('click',()=>$('imageDialog').close());$('importData').addEventListener('change',e=>importData(e.target.files[0]));
+  $('downloadData').addEventListener('click',()=>download(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),'climate-data.json'));
+  $('resetButton').addEventListener('click',()=>{if(!model){notice('먼저 기후를 골라주세요.');return;}$('resetDialog').showModal();});$('cancelReset').addEventListener('click',()=>$('resetDialog').close());
+  $('confirmReset').addEventListener('click',()=>{model=fresh(climate);factIndex=0;questionIndex=0;mode='place';buildLayer=0;viewMode=false;pointers.clear();gesture=null;$('resetDialog').close();openClimate(climate);saveNow();});
+  window.addEventListener('pagehide',saveNow);document.addEventListener('visibilitychange',()=>{if(document.hidden)saveNow();});
+  try{
+    data=validateData(JSON.parse($('defaultData').textContent));const builtIn=data;
+    const reviewedFood=data.climates.find(c=>c.id==='dry')?.questions.find(q=>q.id==='food');
+    const custom=readStorage(DATA_KEY);if(custom){try{
+      data=validateData(JSON.parse(custom));
+      // 이전 한 기후짜리 교사 자료를 보존하면서 이번에 추가된 기후를 합칩니다.
+      if((data.revision||0)<(builtIn.revision||0)){
+        for(const c of builtIn.climates)if(!data.climates.some(old=>old.id===c.id))data.climates.push(c);
+        data.revision=builtIn.revision;writeStorage(DATA_KEY,JSON.stringify(data));
+      }
+      // 이전 기본 문항이 기기에 저장돼 있으면 검토한 문항으로 갱신합니다. 다른 교사 수정은 유지합니다.
+      const savedFood=data.climates.find(c=>c.id==='dry')?.questions.find(q=>q.id==='food');
+      if(reviewedFood&&savedFood&&savedFood.title==='왜 밀과 대추야자를 이용한 음식을 먹을까요?'&&savedFood.options[2]==='해당 지역에서 구하는 식재료를 이용해서'){
+        savedFood.title=reviewedFood.title;savedFood.options[2]=reviewedFood.options[2];writeStorage(DATA_KEY,JSON.stringify(data));
+      }
+    }catch{notice('저장된 학습 자료를 읽지 못해 기본 6개 기후 자료를 열었어요.');}}
+    const saved=readStorage(STORAGE_KEY);if(saved){try{const candidate=JSON.parse(saved),c=data.climates.find(c=>c.id===candidate.climateId);if(c){climate=c;model=restore(candidate,c);worlds[c.id]=model;}}catch{notice('이어하기 기록을 읽지 못했어요. 새 마을을 만들 수 있어요.');}}
+    const bank=readStorage(BANK_KEY);if(bank){try{
+      const savedBank=JSON.parse(bank);if(savedBank.version!==1||!savedBank.worlds||typeof savedBank.worlds!=='object')throw Error('bank');
+      for(const c of data.climates)if(Object.prototype.hasOwnProperty.call(savedBank.worlds,c.id))worlds[c.id]=restore(savedBank.worlds[c.id],c);
+      const last=data.climates.find(c=>c.id===savedBank.lastClimateId);if(last&&worlds[last.id]){climate=last;model=worlds[last.id];}
+    }catch{notice('기후별 기록 일부를 읽지 못했어요. 마지막 마을의 저장 기록을 확인해주세요.');}}
+    if(!storageAvailable)notice('이 브라우저에서는 자동 이어하기를 사용할 수 없어요. 창을 닫기 전에 이미지를 저장해주세요.');renderHome();
+  }catch(error){$('climateCards').replaceChildren(text('p','학습 자료를 읽지 못했어요. climate-data.json의 형식을 확인해주세요.','error-screen'));}
+})();
+</script>
+</body>
+</html>
