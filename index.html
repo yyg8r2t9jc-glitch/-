@@ -797,33 +797,45 @@
                          "id":  "polar",
                          "name":  "한대 기후 · 북극권 사례",
                          "icon":  "❄️",
-                         "subtitle":  "찬바람을 막는 눈과 얼음의 마을",
+                         "subtitle":  "얼어 있는 땅 위에 바닥을 띄운 마을",
                          "biome":  "polar",
                          "sky":  "#ddeef7",
                          "ground":  "#dce9e9",
                          "accent":  "#4d7d97",
-                         "houseTip":  "작은 문과 창을 만들고 벽 사이 틈을 막아 보온하는 집을 표현해보세요.",
+                         "houseTip":  "나무 벽 6개, 땅의 기둥 2개, 높인 바닥 4개와 문·보온 지붕으로 고상가옥을 만들어보세요. 바닥 아래에는 땅에서 이어진 기둥이 있어야 해요.",
                          "houseRule":  {
-                                           "minBlocks":  8,
+                                           "minBlocks":  14,
                                            "requireDoor":  true,
-                                           "requireRoof":  true
+                                           "requireRoof":  true,
+                                           "requireRaised":  true,
+                                           "minWood":  6,
+                                           "minGroundPosts":  2,
+                                           "minRaisedFloors":  4
                                        },
                          "materials":  [
                                            {
-                                               "id":  "snow",
-                                               "name":  "단단한 눈 블록",
-                                               "color":  "#eaf1ec",
-                                               "type":  "snow",
+                                               "id":  "wood",
+                                               "name":  "나무 벽",
+                                               "color":  "#aa8968",
+                                               "type":  "wood",
                                                "suitable":  true,
-                                               "hint":  "주변의 눈을 이용한 전통 집 사례를 만들어볼 수 있어요."
+                                               "hint":  "나무 벽을 쌓고 틈을 막아 찬바람에 대비해보세요."
                                            },
                                            {
-                                               "id":  "ice",
-                                               "name":  "얼음 블록",
-                                               "color":  "#b6dbe6",
-                                               "type":  "ice",
+                                               "id":  "post",
+                                               "name":  "집을 받치는 기둥",
+                                               "color":  "#856c54",
+                                               "type":  "post",
                                                "suitable":  true,
-                                               "hint":  "집의 모양과 틈을 막는 방법을 생각해보세요."
+                                               "hint":  "땅에 기둥을 놓고 그 위에 바닥을 띄워보세요."
+                                           },
+                                           {
+                                               "id":  "floor",
+                                               "name":  "높인 나무 바닥",
+                                               "color":  "#c4a381",
+                                               "type":  "floor",
+                                               "suitable":  true,
+                                               "hint":  "땅에서 이어진 기둥 위에 바닥을 놓아 집과 땅 사이에 공간을 만들어보세요."
                                            },
                                            {
                                                "id":  "roof",
@@ -945,17 +957,17 @@
                          "questions":  [
                                            {
                                                "id":  "house",
-                                               "title":  "추운 곳에서는 왜 문과 창을 작게 만들고 틈을 막을까요?",
+                                               "title":  "영구동토 지역에서는 왜 기둥 위에 집의 바닥을 띄울까요?",
                                                "options":  [
-                                                               "더운 여름에 집 안의 열을 빠르게 내보내려고",
-                                                               "집 안으로 물이 잘 흘러들어오게 하려고",
-                                                               "바람이 집 안을 더 많이 지나가게 하려고",
-                                                               "강한 햇빛이 집 안을 모두 비추게 하려고",
-                                                               "찬바람이 들어오는 것과 집 안의 열이 빠져나가는 것을 줄이려고"
+                                                               "더운 공기를 땅속으로 많이 보내려고",
+                                                               "땅의 얼음을 녹여 농사를 지으려고",
+                                                               "찬바람이 집 안을 더 많이 지나가게 하려고",
+                                                               "햇빛이 집 안을 모두 비추게 하려고",
+                                                               "집의 열이 땅에 전달되어 얼어 있는 땅이 녹는 것을 줄이려고"
                                                            ],
                                                "answer":  4,
-                                               "hint":  "아주 추운 날 집의 틈으로 바람이 들어오면 어떨까요? 따뜻한 공기를 지키는 방법을 생각해보세요.",
-                                               "explanation":  "문·창을 작게 만들고 틈을 막으면 찬바람과 열 손실을 줄이는 데 도움을 줄 수 있어요."
+                                               "hint":  "집의 따뜻한 열이 얼어 있는 땅에 전달되면 어떻게 될까요? 집과 땅 사이의 공간을 생각해보세요.",
+                                               "explanation":  "북극권 일부 영구동토 지역에서는 기둥 위에 바닥을 띄워 집의 열이 땅에 전달되는 것을 줄여요. 작은 문·창과 틈을 막은 벽은 집 안의 따뜻함을 지키는 데 도움을 줘요."
                                            },
                                            {
                                                "id":  "clothes",
@@ -1182,7 +1194,7 @@
                                        ]
                      }
                  ],
-    "revision":  3
+    "revision":  4
 }</script>
 <script>
 (() => {
@@ -1200,6 +1212,7 @@
   let saveTimer,imageBlob,storageAvailable=true,storageNoticeShown=false;
   let keyboardCell={x:7,y:12},showCursor=false;
   let buildLayer=0,viewMode=false,hitFaces=[],sceneProjection=null;
+  let floorAnchor=null,placementPreview=null;
   const camera={yaw:Math.PI/4,elevation:0.58,zoom:1};
   const pointers=new Map();let gesture=null;
   const voxelIndex=(x,z,h)=>(h*16+z)*16+x;
@@ -1234,6 +1247,9 @@
       if((c.houseRule.requireDoor&&!c.materials.some(m=>m.type==='door'))||(c.houseRule.requireRoof&&!c.materials.some(m=>['roof','roofSlope'].includes(m.type))))throw Error('미션에 필요한 문·지붕 재료가 없습니다.');
       if(c.houseRule.requireRaised!==undefined&&typeof c.houseRule.requireRaised!=='boolean')throw Error('높인 바닥 기준은 true 또는 false로 입력해주세요.');
       if(c.houseRule.requireRaised&&(!c.materials.some(m=>m.type==='post')||!c.materials.some(m=>m.type==='floor')))throw Error('높인 집에 필요한 기둥·바닥 재료가 없습니다.');
+      for(const key of ['minWood','minGroundPosts','minRaisedFloors'])if(c.houseRule[key]!==undefined&&(!Number.isInteger(c.houseRule[key])||c.houseRule[key]<1||c.houseRule[key]>256))throw Error('집 재료별 최소 개수를 확인해주세요.');
+      if(c.houseRule.minWood&&!c.materials.some(m=>m.type==='wood'))throw Error('나무 벽 재료가 필요합니다.');
+      if((c.houseRule.minGroundPosts||c.houseRule.minRaisedFloors)&&!c.houseRule.requireRaised)throw Error('기둥·바닥 개수 조건에는 높인 바닥 조건이 필요합니다.');
       if(c.biome!==undefined&&!['dry','tropical','temperate','continental','polar','highland'].includes(c.biome))throw Error('월드 풍경 종류를 확인해주세요.');
       if(!list(c.clothes)||!unique(c.clothes)||!c.clothes.every(o=>id(o.id)&&str(o.name)&&str(o.icon)&&color(o.color)&&['long','short','fur','layers','poncho'].includes(o.style)&&typeof o.suitable==='boolean'&&str(o.hint)))throw Error('옷 목록을 확인해주세요.');
       if(!list(c.ingredients,1,20)||!unique(c.ingredients)||!c.ingredients.every(i=>id(i.id)&&str(i.name)&&str(i.icon)&&color(i.color)&&Number.isInteger(i.x)&&Number.isInteger(i.y)&&i.x>=0&&i.x<16&&i.y>=0&&i.y<16))throw Error('식재료와 위치를 확인해주세요.');
@@ -1264,12 +1280,15 @@
     const visited=new Set();
     for(let start=0;start<4096;start++){
       if(!model.voxels[start]||visited.has(start))continue;
-      const queue=[start],types=new Set();let count=0,raisedFloor=false,groundPost=false;visited.add(start);
+      const queue=[start],types=new Set();let count=0,raisedFloor=false,groundPost=false,woodCount=0,groundPosts=0;const supportedFloors=[];visited.add(start);
       while(queue.length){
-        const index=queue.pop(),x=index%16,z=Math.floor(index/16)%16,h=Math.floor(index/256),type=getMaterial(model.voxels[index]).type;count++;types.add(type);if(type==='floor'&&h>=1)raisedFloor=true;if(type==='post'&&h===0)groundPost=true;
+        const index=queue.pop(),x=index%16,z=Math.floor(index/16)%16,h=Math.floor(index/256),type=getMaterial(model.voxels[index]).type;count++;types.add(type);if(type==='floor'&&h>=1)raisedFloor=true;if(type==='post'&&h===0){groundPost=true;groundPosts++;}if(type==='wood')woodCount++;
+        if(type==='floor'&&h>=1){let supported=true;for(let below=h-1;below>=0;below--){const block=model.voxels[voxelIndex(x,z,below)];if(!block||getMaterial(block).type!=='post'){supported=false;break;}}supportedFloors.push({x,z,h,supported});}
         for(const[nx,nz,nh]of[[x-1,z,h],[x+1,z,h],[x,z-1,h],[x,z+1,h],[x,z,h-1],[x,z,h+1]]){const n=voxelIndex(nx,nz,nh);if(inBounds(nx,nz,nh)&&model.voxels[n]&&!visited.has(n)){visited.add(n);queue.push(n);}}
       }
-      if(count>=climate.houseRule.minBlocks&&(!climate.houseRule.requireDoor||types.has('door'))&&(!climate.houseRule.requireRoof||types.has('roof')||types.has('roofSlope'))&&(!climate.houseRule.requireRaised||(raisedFloor&&groundPost)))return true;
+      let raisedFloorCount=0;
+      if(climate.houseRule.minRaisedFloors){const floors=new Map(supportedFloors.map(f=>[`${f.x},${f.z},${f.h}`,f])),seen=new Set();for(const f of supportedFloors){const key=`${f.x},${f.z},${f.h}`;if(seen.has(key))continue;const pending=[f];let size=0,supports=0;seen.add(key);while(pending.length){const current=pending.pop();size++;if(current.supported)supports++;for(const [dx,dz] of [[1,0],[-1,0],[0,1],[0,-1]]){const nextKey=`${current.x+dx},${current.z+dz},${current.h}`,next=floors.get(nextKey);if(next&&!seen.has(nextKey)){seen.add(nextKey);pending.push(next);}}}if(supports>=(climate.houseRule.minGroundPosts||1))raisedFloorCount=Math.max(raisedFloorCount,size);}}
+      if(woodCount>=(climate.houseRule.minWood||0)&&groundPosts>=(climate.houseRule.minGroundPosts||0)&&raisedFloorCount>=(climate.houseRule.minRaisedFloors||0)&&count>=climate.houseRule.minBlocks&&(!climate.houseRule.requireDoor||types.has('door'))&&(!climate.houseRule.requireRoof||types.has('roof')||types.has('roofSlope'))&&(!climate.houseRule.requireRaised||(raisedFloor&&groundPost)))return true;
     }return false;
   }
   function completion(){return{facts:model.facts,house:houseComplete(),clothes:Boolean(model.clothing),food:Boolean(model.food),reason:climate.questions.every(q=>Number.isInteger(model.answers[q.id]))};}
@@ -1292,7 +1311,7 @@
     if(model&&model.climateId!==c.id)saveNow();
     const existing=model&&model.climateId===c.id?model:worlds[c.id];
     climate=c;model=existing?restore(existing,c):fresh(c);worlds[c.id]=model;
-    factIndex=0;questionIndex=0;buildLayer=0;mode='place';keyboardCell={x:7,y:12};camera.yaw=Math.PI/4;camera.elevation=.58;camera.zoom=1;
+    factIndex=0;questionIndex=0;buildLayer=0;mode='place';floorAnchor=null;placementPreview=null;keyboardCell={x:7,y:12};camera.yaw=Math.PI/4;camera.elevation=.58;camera.zoom=1;
     materialId=c.materials[0].id;document.documentElement.style.setProperty('--accent',c.accent);
     $('home').hidden=true;$('game').hidden=false;$('worldTitle').textContent=`${c.icon} ${c.name}`;$('worldSubtitle').textContent=c.subtitle;
     setTab(model.facts?'house':'facts');if(readStorage(GUIDE_KEY)!=='seen')$('guide').showModal();
@@ -1316,7 +1335,17 @@
       const choices=text('div','','choices');
       for(const m of climate.materials){const b=button('',()=>{materialId=m.id;mode='place';viewMode=false;renderActivity();updateToolCaption();feedback(m.hint,!m.suitable);},'choice');b.setAttribute('aria-pressed',String(materialId===m.id&&mode==='place'));const swatch=text('span','','swatch');swatch.style.background=m.color;b.append(swatch,text('span',m.name));choices.append(b);}host.append(choices);
       const layer=text('div','','layer-control'),down=button('−',()=>{buildLayer=Math.max(0,buildLayer-1);renderActivity();drawWorld();}),up=button('＋',()=>{buildLayer=Math.min(15,buildLayer+1);renderActivity();drawWorld();});down.setAttribute('aria-label','쌓는 높이 낮추기');up.setAttribute('aria-label','쌓는 높이 높이기');down.disabled=buildLayer===0;up.disabled=buildLayer===15;layer.append(down,text('span',`빈 땅에 놓는 높이: ${buildLayer+1}층`),up);host.append(layer);
-      const r=climate.houseRule;host.append(text('p',`미션: 연결된 블록 ${r.minBlocks}개 이상${r.requireDoor?' + 문':''}${r.requireRoof?' + 지붕':''}${r.requireRaised?' + 땅의 기둥 + 2층 이상 높인 바닥':''}`,'feedback small'),text('p','윗면을 누르면 위로, 옆면을 누르면 옆으로 쌓여요. 시점을 돌려 뒤쪽도 만들어보세요.','small muted'));
+      if(getMaterial(materialId).type==='floor'&&mode==='place'){
+        host.append(text('p','기둥 위에 첫 바닥을 놓고 바닥 옆면을 누르면, 아래가 비어 있어도 같은 높이에 이어져요. 놓은 바닥을 눌러 이어쌓기 시작점을 바꿀 수 있어요.','feedback small'));
+        const expansion=text('div','','choices');
+        for(const [label,dx,dz] of [['← 바닥 잇기',-1,0],['→ 바닥 잇기',1,0],['↑ 바닥 잇기',0,-1],['↓ 바닥 잇기',0,1]]){
+          const b=button(label,()=>{if(!validFloorAnchor())return;const {x,z,h}=floorAnchor;editCell(x+dx,z+dz,h);});b.disabled=!validFloorAnchor();
+          b.addEventListener('pointerenter',()=>{if(validFloorAnchor()){placementPreview={x:floorAnchor.x+dx,z:floorAnchor.z+dz,h:floorAnchor.h};drawWorld();}});
+          b.addEventListener('pointerleave',()=>{placementPreview=null;drawWorld();});expansion.append(b);
+        }host.append(expansion);
+        if(validFloorAnchor())host.append(text('p',` 이어쌓기 시작점: 가로 ${floorAnchor.x+1}, 세로 ${floorAnchor.z+1} · ${floorAnchor.h+1}층`,'small muted'));
+      }
+      const r=climate.houseRule;const missionText=r.minWood?`미션: 나무 벽 ${r.minWood}개 이상 + 땅의 기둥 ${r.minGroundPosts}개 이상 + 기둥으로 받친 연결된 높인 바닥 ${r.minRaisedFloors}개 이상 + 문 + 지붕`:`미션: 연결된 블록 ${r.minBlocks}개 이상${r.requireDoor?' + 문':''}${r.requireRoof?' + 지붕':''}${r.requireRaised?' + 땅의 기둥 + 2층 이상 높인 바닥':''}`;host.append(text('p',missionText,'feedback small'),text('p','윗면을 누르면 위로, 옆면을 누르면 옆으로 쌓여요. 시점을 돌려 뒤쪽도 만들어보세요.','small muted'));
     }
     if(tab==='clothes'){
       const preview=text('div','','avatar-preview'),c=document.createElement('canvas');c.id='avatar';c.width=150;c.height=180;preview.append(c);host.append(preview);
@@ -1347,6 +1376,8 @@
   // 화면에서 가장 앞에 그린 면부터 검사하므로 가려진 블록을 잘못 고르지 않습니다.
   function pickPoint(p){for(let i=hitFaces.length-1;i>=0;i--){const f=hitFaces[i];if(pointInside(p,f.points))return f.hit;}return null;}
   function pointerCell(e){const b=world.getBoundingClientRect();return pickPoint({x:(e.clientX-b.left)*W/b.width,y:(e.clientY-b.top)*W/b.height});}
+  function placementCell(hit){if(!hit||hit.kind==='ingredient')return null;const n=hit.kind==='voxel'?hit.normal:[0,0,0];return{x:hit.x+n[0],z:hit.z+n[1],h:hit.kind==='voxel'?hit.h+n[2]:buildLayer};}
+  function validFloorAnchor(){return floorAnchor&&model&&inBounds(floorAnchor.x,floorAnchor.z,floorAnchor.h)&&getMaterial(model.voxels[voxelIndex(floorAnchor.x,floorAnchor.z,floorAnchor.h)])?.type==='floor';}
   function editHit(hit){
     if(!hit)return;
     if(tab==='food'){
@@ -1355,14 +1386,16 @@
     }
     if(hit.kind==='ingredient'){feedback('음식 탭에서 식재료를 모을 수 있어요.');return;}
     if(mode==='erase'){if(hit.kind==='voxel')editCell(hit.x,hit.z,hit.h);return;}
-    const n=hit.kind==='voxel'?hit.normal:[0,0,0];
-    editCell(hit.x+n[0],hit.z+n[1],hit.kind==='voxel'?hit.h+n[2]:buildLayer);
+    if(getMaterial(materialId).type==='floor'&&hit.kind==='voxel'&&getMaterial(model.voxels[voxelIndex(hit.x,hit.z,hit.h)]).type==='floor'&&hit.normal[2]===1){floorAnchor={x:hit.x,z:hit.z,h:hit.h};placementPreview=null;renderActivity();drawWorld();feedback('이어쌓기 시작점을 골랐어요. 방향 버튼이나 바닥 옆면으로 확장해보세요.');return;}
+    const cell=placementCell(hit);if(cell)editCell(cell.x,cell.z,cell.h);
   }
   function editCell(x,z,h=buildLayer){
     if(!inBounds(x,z,h)){feedback('이 월드는 가로·세로 16칸, 높이 16층까지 만들 수 있어요.');return;}
     if(tab!=='house'){feedback('블록을 쌓으려면 집 탭을, 재료를 모으려면 음식 탭을 선택하세요.');return;}
     const index=voxelIndex(x,z,h);if(mode==='place'&&model.voxels[index]){feedback('이미 블록이 있어요. 다른 면을 누르거나 먼저 부숴보세요.');return;}
-    const before=houseComplete();model.voxels[index]=mode==='erase'?null:materialId;refresh();
+    const before=houseComplete();model.voxels[index]=mode==='erase'?null:materialId;placementPreview=null;
+    if(mode==='place'&&getMaterial(materialId).type==='floor'){floorAnchor={x,z,h};renderActivity();}else if(!validFloorAnchor())floorAnchor=null;
+    refresh();
     if(mode==='erase')feedback('블록을 지웠어요. 다시 쌓아도 괜찮아요.');
     else{const m=getMaterial(materialId);feedback(m.hint,!m.suitable);if(m.suitable&&!before&&houseComplete())feedback('집 짓기 미션을 마쳤어요! 어떤 날씨에 대비했는지 생각해보세요.');}
   }
@@ -1467,6 +1500,7 @@
         if(m.type==='ice')inset(face.points,.25,.25,.7,.3,'#ffffff90');
       }
     }
+    if(placementPreview&&target===ctx&&tab==='house'&&mode==='place'&&!viewMode){const {x,z,h}=placementPreview;if(inBounds(x,z,h)&&!model.voxels[voxelIndex(x,z,h)]){target.save();target.globalAlpha=.45;for(const corners of [[[x,z,h+1],[x+1,z,h+1],[x+1,z+1,h+1],[x,z+1,h+1]],[[x,z,h],[x+1,z,h],[x+1,z,h+1],[x,z,h+1]],[[x+1,z,h],[x+1,z+1,h],[x+1,z+1,h+1],[x+1,z,h+1]]]){trace(corners.map(p=>project(...p)));target.fillStyle='#58bfa1';target.fill();target.strokeStyle='#17644d';target.lineWidth=2;target.stroke();}target.restore();}}
     if(showCursor&&target===ctx){const x=keyboardCell.x,z=keyboardCell.y;trace([[x,z,buildLayer+.02],[x+1,z,buildLayer+.02],[x+1,z+1,buildLayer+.02],[x,z+1,buildLayer+.02]].map(p=>project(...p)));target.strokeStyle='#245a48';target.lineWidth=3;target.stroke();}
     if(tab==='food'&&target===ctx)for(const i of climate.ingredients)if(!model.collected.includes(i.id)){
       const p=project(i.x+.5,i.y+.5,1.5),size=25;
@@ -1517,11 +1551,12 @@
     if(pointers.size>=2){for(const p of pointers.values())p.cancelled=true;gesture={...gestureMetrics(),zoom:camera.zoom,yaw:camera.yaw};}
   });
   world.addEventListener('pointermove',e=>{
-    const p=pointers.get(e.pointerId);if(!p)return;const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+    const p=pointers.get(e.pointerId);if(!p){placementPreview=placementCell(pointerCell(e));drawWorld();return;}const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
     if(Math.hypot(p.x-p.startX,p.y-p.startY)>6)p.moved=true;
     if(pointers.size>=2&&gesture){const now=gestureMetrics();camera.zoom=Math.min(2.2,Math.max(.65,gesture.zoom*now.distance/gesture.distance));camera.yaw=gesture.yaw+now.angle-gesture.angle;drawWorld();}
     else if(viewMode){camera.yaw+=dx*.009;camera.elevation=Math.min(1.15,Math.max(.25,camera.elevation+dy*.004));drawWorld();}
   });
+  world.addEventListener('pointerleave',()=>{placementPreview=null;drawWorld();});
   function endPointer(e,cancelled){const p=pointers.get(e.pointerId);if(!p)return;pointers.delete(e.pointerId);if(pointers.size<2)gesture=null;if(!cancelled&&!p.cancelled&&!p.moved&&!viewMode)editHit(pointerCell(e));}
   world.addEventListener('pointerup',e=>endPointer(e,false));
   world.addEventListener('pointercancel',e=>endPointer(e,true));world.addEventListener('lostpointercapture',e=>endPointer(e,true));
@@ -1550,6 +1585,7 @@
       // 이전 한 기후짜리 교사 자료를 보존하면서 이번에 추가된 기후를 합칩니다.
       if((data.revision||0)<(builtIn.revision||0)){
         for(const c of builtIn.climates)if(!data.climates.some(old=>old.id===c.id))data.climates.push(c);
+        const oldPolar=data.climates.find(c=>c.id==='polar');if(oldPolar&&oldPolar.subtitle==='찬바람을 막는 눈과 얼음의 마을'&&!oldPolar.houseRule.requireRaised){const nextPolar=builtIn.climates.find(c=>c.id==='polar');oldPolar.subtitle=nextPolar.subtitle;oldPolar.houseTip=nextPolar.houseTip;oldPolar.houseRule=nextPolar.houseRule;oldPolar.materials=nextPolar.materials;oldPolar.questions=oldPolar.questions.map(q=>q.id==='house'?nextPolar.questions.find(n=>n.id==='house'):q);}
         data.revision=builtIn.revision;writeStorage(DATA_KEY,JSON.stringify(data));
       }
       // 이전 기본 문항이 기기에 저장돼 있으면 검토한 문항으로 갱신합니다. 다른 교사 수정은 유지합니다.
